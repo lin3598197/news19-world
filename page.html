@@ -3,8 +3,8 @@
 <title>The Day in World News — Thursday 19 November 2026</title>
 <style>
   :root{
-    --paper:#fdfaf2; --ink:#14161a; --red:#c8352f; --gold:#e8c56a;
-    --hero-art:98px; --lede-art:92px; --card-art:118px;
+    --paper:#fdfaf2; --ink:#14161a; --red:#c8352f; --gold:#e8c56a; --tint:#f3eee1;
+    --hero-art:90px; --lede-art:84px; --card-art:110px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1024px;height:1024px;overflow:hidden;background:var(--paper)}
@@ -44,17 +44,21 @@
   .tsc{font:700 13px/1 Georgia,serif;color:var(--gold);flex:0 0 auto}
 
   /* ---------- numbers ---------- */
+  /* v4: this was a black band. Now a cream band between two heavy ink rules,
+     label in red, numerals in ink, captions in red small caps. The strip still
+     reads as a distinct object, but it no longer reads as a slab. */
+  .numbers{background:var(--tint);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
   .nb{display:flex;height:100%;align-items:stretch}
-  .nplate{flex:0 0 112px;background:var(--ink);color:var(--paper);display:flex;
-          flex-direction:column;justify-content:center;padding-left:12px;gap:3px}
+  .nplate{flex:0 0 112px;display:flex;flex-direction:column;justify-content:center;
+          padding-left:12px;gap:3px}
   .nplate span{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;
-               white-space:nowrap}
-  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:3px 0 0 11px;
+               white-space:nowrap;color:var(--red)}
+  .nc{flex:1 1 0;min-width:0;border-left:1px solid #cfc7b4;padding:3px 0 0 11px;
       display:flex;flex-direction:column;justify-content:center}
-  .nf{font:700 20px/1.02 Georgia,serif;color:var(--red);letter-spacing:-.018em;
+  .nf{font:700 21px/1.02 Georgia,serif;color:var(--ink);letter-spacing:-.018em;
       white-space:nowrap}
-  .ncap{font:600 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.05em;
-        text-transform:uppercase;color:#5b564c;margin-top:2px}
+  .ncap{font:700 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.07em;
+        text-transform:uppercase;color:var(--red);margin-top:2px}
 
   /* ---------- leads ---------- */
   .leads{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.06fr) minmax(0,1fr);
@@ -102,16 +106,16 @@
      the densest thing left on the sheet, so it gets the leading rather than more
      items: at 300px nine rows of air read as a list, eighteen rows read as texture. */
   .briefs{background:var(--paper)}
-  .bh{height:20px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
+  .bh{height:20px;border-bottom:2px solid var(--red);display:flex;align-items:center;
       justify-content:space-between;padding:0 12px}
-  .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em}
+  .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em;color:var(--ink)}
   .bhn{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
-       color:var(--gold)}
+       color:var(--red)}
   .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 22px);
-      padding:2px 12px 0;column-gap:22px}
+      padding:6px 12px 0;column-gap:22px}
   .bc{min-width:0;padding-right:20px;border-right:1px solid #c6c0b2}
   .bc:last-child{border-right:none;padding-right:0}
-  .br{display:flex;align-items:baseline;gap:5px;height:12.4px;overflow:hidden}
+  .br{display:flex;align-items:baseline;gap:5px;height:12.2px;overflow:hidden}
   .bn{font:700 9.4px/1 Georgia,serif;color:var(--red);width:15px;flex:0 0 15px;text-align:right}
   .bt{font:400 9.4px/1.32 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -133,25 +137,27 @@
              text-transform:uppercase;color:#3f3b34;display:inline-flex;align-items:center;gap:2.5px;
              white-space:nowrap}
   .mapkey .k i{width:6.5px;height:6.5px;border-radius:50%;display:inline-block;flex:0 0 auto}
-  .xp{margin:4px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
-      color:var(--paper);padding:5px 12px 0 12px;height:calc(100% - 4px);overflow:hidden}
-  .xhead{font:700 12px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
-  .xnote{font:400 9.6px/1.26 Georgia,serif;color:#ded8c8;margin-top:3px;max-width:690px}
+  .xp{margin:4px 12px 0 0;background:var(--tint);border-left:3px solid var(--red);
+      border-top:1px solid #d8d0bd;border-right:1px solid #d8d0bd;
+      border-bottom:1px solid #d8d0bd;color:var(--ink);
+      padding:5px 12px 0 10px;height:calc(100% - 4px);overflow:hidden}
+  .xhead{font:700 12px/1 Georgia,serif;color:var(--red);letter-spacing:.01em}
+  .xnote{font:400 9.6px/1.26 Georgia,serif;color:#4b473f;margin-top:3px;max-width:690px}
   .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:3px}
-  .xi{font:400 9.6px/1.46 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
+  .xi{font:400 9.6px/1.46 Georgia,serif;color:var(--ink);padding-left:9px;position:relative;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .xi:before{content:"";position:absolute;left:0;top:6px;width:3px;height:3px;
              background:var(--red)}
 
   /* ---------- footer ---------- */
-  .footer{background:var(--ink);color:var(--paper);display:flex;align-items:center;
-          justify-content:space-between;padding:0 12px}
+  .footer{background:var(--paper);border-top:2px solid var(--red);
+          display:flex;align-items:center;justify-content:space-between;padding:0 12px}
   .fl,.fr{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.07em;
-          text-transform:uppercase;white-space:nowrap}
-  .fr{color:var(--gold)}
+          text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+  .fr{color:var(--red)}
 </style></head>
 <body><div class="page">
-  <section class="band " data-block="masthead" style="height:80px">
+  <section class="band " data-block="masthead" style="height:88px">
   <div class="mh">
     <div class="mb">
       <span class="mb-mon">NOV</span>
@@ -164,7 +170,7 @@
       <div class="strap">Everything here happened, or was first reported, on Thursday 19 November 2026 · nothing carried over from the 18th</div>
     </div>
     <div class="mr">
-      <div class="tallynum">29</div>
+      <div class="tallynum">31</div>
       <div class="tallylab">STORIES</div>
       <div class="tallysub">13 DRAWN</div>
     </div>
@@ -176,8 +182,8 @@
     <div class="ts" style="flex:5;background:#7a2a2a">
       <span class="tsn">Americas</span><span class="tsc">5</span>
     </div>
-    <div class="ts" style="flex:5;background:#235040">
-      <span class="tsn">Asia</span><span class="tsc">5</span>
+    <div class="ts" style="flex:7;background:#235040">
+      <span class="tsn">Asia</span><span class="tsc">7</span>
     </div>
     <div class="ts" style="flex:3;background:#6b4a16">
       <span class="tsn">Africa</span><span class="tsc">3</span>
@@ -191,7 +197,7 @@
     <div class="ts" style="flex:5;background:#26262b">
       <span class="tsn">World</span><span class="tsc">5</span>
     </div></div></section>
-  <section class="band " data-block="numbers" style="height:36px"><div class="nb">
+  <section class="band " data-block="numbers" style="height:37px"><div class="nb">
     <div class="nplate"><span>THE DAY</span><span>IN NUMBERS</span></div>
     
       <div class="nc"><div class="nf">70 min</div>
@@ -207,7 +213,7 @@
       <div class="nc"><div class="nf">96–0</div>
         <div class="ncap">Mongolia’s vote</div></div>
   </div></section>
-  <section class="band leads-band" data-block="leads" style="height:254px"><div class="leads"><article class="lede hero">
+  <section class="band leads-band" data-block="leads" style="height:246px"><div class="leads"><article class="lede hero">
     <div class="artbox hero-art"><span class="no"><svg class="art" data-key="summit" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="APEC · SHENZHEN">
   <rect width="160" height="96" fill="#e7ebe9"/>
@@ -310,21 +316,21 @@
   </article><article class="lede sm">
     <div class="artbox"><span class="no"><svg class="art" data-key="riyadh" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="YEMEN · RIYADH">
-  <rect width="160" height="96" fill="#101a2e"/>
-  <rect x="0" y="0" width="160" height="34" fill="#1a2740"/>
+  <rect width="160" height="96" fill="#31456a"/>
+  <rect x="0" y="0" width="160" height="34" fill="#3d5479"/>
   <!-- scattered stars -->
   <circle cx="24" cy="12" r="0.7" fill="#c9d6e4"/><circle cx="52" cy="7" r="0.6" fill="#c9d6e4"/>
   <circle cx="126" cy="10" r="0.7" fill="#c9d6e4"/><circle cx="146" cy="20" r="0.6" fill="#c9d6e4"/>
   <!-- distant skyline -->
-  <rect x="0" y="66" width="18" height="30" fill="#16223a"/>
-  <rect x="18" y="58" width="14" height="38" fill="#1b2a45"/>
-  <rect x="32" y="70" width="16" height="26" fill="#16223a"/>
-  <rect x="110" y="62" width="15" height="34" fill="#1b2a45"/>
-  <rect x="125" y="72" width="13" height="24" fill="#16223a"/>
-  <rect x="138" y="60" width="22" height="36" fill="#1b2a45"/>
+  <rect x="0" y="66" width="18" height="30" fill="#3a4f6f"/>
+  <rect x="18" y="58" width="14" height="38" fill="#43597c"/>
+  <rect x="32" y="70" width="16" height="26" fill="#3a4f6f"/>
+  <rect x="110" y="62" width="15" height="34" fill="#43597c"/>
+  <rect x="125" y="72" width="13" height="24" fill="#3a4f6f"/>
+  <rect x="138" y="60" width="22" height="36" fill="#43597c"/>
   <!-- the tower: lit window grid, top rows blown out -->
-  <rect x="64" y="6" width="32" height="90" fill="#2b3a55"/>
-  <rect x="64" y="6" width="32" height="90" fill="none" stroke="#0a101c" stroke-width="1"/>
+  <rect x="64" y="6" width="32" height="90" fill="#56719b"/>
+  <rect x="64" y="6" width="32" height="90" fill="none" stroke="#28374f" stroke-width="1"/>
   <rect x="67.4" y="21" width="3.6" height="3.2"
            fill="#7d6740"/><rect x="73" y="21" width="3.6" height="3.2"
            fill="#f2d78c"/><rect x="78.60000000000001" y="21" width="3.6" height="3.2"
@@ -387,7 +393,7 @@
            fill="#f2d78c"/><rect x="89.80000000000001" y="78.2" width="3.6" height="3.2"
            fill="#f2d78c"/>
   <!-- blown out floors at the top -->
-  <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z" fill="#05080e"/>
+  <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z" fill="#1e2c44"/>
   <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z"
         fill="none" stroke="#3a4a66" stroke-width="0.7"/>
   <path d="M86 26 l4.2 6.720000000000001 l-5.460000000000001 1.26 Z" fill="#cfe0ee" opacity="0.92"/><path d="M97 30 l3.4 5.44 l-4.42 1.02 Z" fill="#cfe0ee" opacity="0.92"/><path d="M80 34 l3.6 5.760000000000001 l-4.680000000000001 1.08 Z" fill="#cfe0ee" opacity="0.92"/><path d="M101 41 l2.8 4.4799999999999995 l-3.6399999999999997 0.84 Z" fill="#cfe0ee" opacity="0.92"/><path d="M90 38 l4 6.4 l-5.2 1.2 Z" fill="#cfe0ee" opacity="0.92"/><path d="M75 28 l2.6 4.16 l-3.3800000000000003 0.78 Z" fill="#cfe0ee" opacity="0.92"/><path d="M104 33 l2.4 3.84 l-3.12 0.72 Z" fill="#cfe0ee" opacity="0.92"/><path d="M93 47 l3 4.800000000000001 l-3.9000000000000004 0.8999999999999999 Z" fill="#cfe0ee" opacity="0.92"/>
@@ -400,7 +406,7 @@
     <p class="deck">Seven or eight floors of the Saudi wealth fund’s PIF Tower damaged; no injuries reported.</p>
     <div class="src">Reuters · Al-Monitor</div>
   </article></div></section>
-  <section class="band pics-band" data-block="bandA" style="height:184px"><div class="pics"><article class="card">
+  <section class="band pics-band" data-block="bandA" style="height:176px"><div class="pics"><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="kerch" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="UKRAINE · KERCH">
   <rect width="160" height="96" fill="#8fa3b3"/>
@@ -599,40 +605,40 @@
     <div class="kick3"><i class="dot">8</i>Europe · DENMARK · GREENLAND</div>
     <h3 class="ch">Denmark ratifies the Greenland pact</h3>
   </article></div></section>
-  <section class="band pics-band" data-block="bandB" style="height:184px"><div class="pics"><article class="card">
+  <section class="band pics-band" data-block="bandB" style="height:176px"><div class="pics"><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="dhaka" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="BANGLADESH · DHAKA">
-  <rect width="160" height="96" fill="#1c1a2b"/>
-  <rect x="0" y="0" width="160" height="26" fill="#241f34"/>
+  <rect width="160" height="96" fill="#3b3752"/>
+  <rect x="0" y="0" width="160" height="26" fill="#463f5f"/>
   <!-- fire glow behind the house -->
   <path d="M52 52 Q46 36 54 22 Q58 32 62 22 Q66 34 64 52 Z" fill="#d9631e"/>
   <path d="M70 56 Q64 40 72 28 Q76 38 80 28 Q86 40 82 58 Z" fill="#e8822a"/>
   <path d="M94 54 Q88 40 96 26 Q100 36 104 26 Q110 38 106 56 Z" fill="#d9631e"/>
   <path d="M54 50 Q52 40 58 32 Q62 40 60 50 Z" fill="#f4b64a"/>
   <path d="M74 54 Q72 44 78 36 Q82 44 80 56 Z" fill="#f4b64a"/>
-  <circle cx="80" cy="20" r="5" fill="#3c3346" opacity="0.9"/>
-  <circle cx="66" cy="12" r="6" fill="#332c3e" opacity="0.9"/>
+  <circle cx="80" cy="20" r="5" fill="#5e5470" opacity="0.9"/>
+  <circle cx="66" cy="12" r="6" fill="#544b63" opacity="0.9"/>
   <!-- low house with arched roofline -->
-  <path d="M26 66 L26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48 L108 66 Z" fill="#4a3b46"/>
-  <path d="M26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48" fill="none" stroke="#2a222c" stroke-width="1.6"/>
-  <rect x="26" y="64" width="82" height="4" fill="#2a222c"/>
+  <path d="M26 66 L26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48 L108 66 Z" fill="#6d5a63"/>
+  <path d="M26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48" fill="none" stroke="#4b3f49" stroke-width="1.6"/>
+  <rect x="26" y="64" width="82" height="4" fill="#4b3f49"/>
   <rect x="34" y="52" width="10" height="12" fill="#f0a63c"/>
-  <rect x="50" y="52" width="10" height="12" fill="#2a222c"/>
+  <rect x="50" y="52" width="10" height="12" fill="#4b3f49"/>
   <rect x="66" y="52" width="10" height="12" fill="#f0a63c"/>
-  <rect x="82" y="52" width="10" height="12" fill="#2a222c"/>
+  <rect x="82" y="52" width="10" height="12" fill="#4b3f49"/>
   <rect x="96" y="52" width="6" height="12" fill="#f0a63c"/>
   <!-- roof fire along the ridge -->
   <path d="M30 45 Q36 40 42 45 Q48 40 54 45 Q60 41 64 45 Q70 40 76 45 Q82 41 88 45 Q94 40 100 45" 
         fill="none" stroke="#e8721f" stroke-width="3"/>
   <!-- road and lamps -->
-  <rect x="0" y="68" width="160" height="28" fill="#2c2a33"/>
-  <rect x="0" y="68" width="160" height="1.6" fill="#464350"/>
+  <rect x="0" y="68" width="160" height="28" fill="#4d4a58"/>
+  <rect x="0" y="68" width="160" height="1.6" fill="#6a6678"/>
   
-    <rect x="16" y="52" width="1.6" height="17" fill="#5a5766"/>
+    <rect x="16" y="52" width="1.6" height="17" fill="#7a7688"/>
     <circle cx="16.8" cy="50" r="2.6" fill="#f6d98a"/>
-    <rect x="120" y="52" width="1.6" height="17" fill="#5a5766"/>
+    <rect x="120" y="52" width="1.6" height="17" fill="#7a7688"/>
     <circle cx="120.8" cy="50" r="2.6" fill="#f6d98a"/>
-    <rect x="146" y="52" width="1.6" height="17" fill="#5a5766"/>
+    <rect x="146" y="52" width="1.6" height="17" fill="#7a7688"/>
     <circle cx="146.8" cy="50" r="2.6" fill="#f6d98a"/>
   <!-- bus, lower left -->
   <rect x="8" y="72" width="42" height="15" rx="1.6" fill="#c8352f"/>
@@ -784,11 +790,11 @@
   </article><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="gta" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="GAMES · GTA VI">
-  <rect width="160" height="96" fill="#151319"/>
-  <rect x="0" y="0" width="160" height="18" fill="#1d1a23"/>
+  <rect width="160" height="96" fill="#3a3644"/>
+  <rect x="0" y="0" width="160" height="18" fill="#443f50"/>
   <!-- storefront block -->
-  <rect x="6" y="16" width="104" height="62" fill="#2a2530"/>
-  <rect x="6" y="16" width="104" height="3" fill="#3a3442"/>
+  <rect x="6" y="16" width="104" height="62" fill="#585162"/>
+  <rect x="6" y="16" width="104" height="3" fill="#6c6478"/>
   <!-- red sign -->
   <rect x="12" y="20" width="60" height="11" fill="#c8352f"/>
   <rect x="12" y="20" width="60" height="11" fill="none" stroke="#8f231f" stroke-width="0.9"/>
@@ -797,50 +803,50 @@
   <rect x="17" y="27" width="24" height="1.6" fill="#f0c9c5"/>
   <!-- four tall lit window panels -->
   <rect x="12" y="36" width="10" height="30" fill="#f0dfb4"/>
-            <rect x="12" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-            <rect x="16.4" y="36" width="1.2" height="30" fill="#4a4350"/><rect x="25.4" y="36" width="10" height="30" fill="#f0dfb4"/>
-            <rect x="25.4" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-            <rect x="29.799999999999997" y="36" width="1.2" height="30" fill="#4a4350"/><rect x="38.8" y="36" width="10" height="30" fill="#f0dfb4"/>
-            <rect x="38.8" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-            <rect x="43.199999999999996" y="36" width="1.2" height="30" fill="#4a4350"/><rect x="52.2" y="36" width="10" height="30" fill="#f0dfb4"/>
-            <rect x="52.2" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-            <rect x="56.6" y="36" width="1.2" height="30" fill="#4a4350"/>
-  <rect x="64" y="36" width="10" height="30" fill="#3a3442"/>
-  <rect x="64" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-  <rect x="66" y="48" width="6" height="2" fill="#8b8194"/>
+            <rect x="12" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+            <rect x="16.4" y="36" width="1.2" height="30" fill="#6f6779"/><rect x="25.4" y="36" width="10" height="30" fill="#f0dfb4"/>
+            <rect x="25.4" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+            <rect x="29.799999999999997" y="36" width="1.2" height="30" fill="#6f6779"/><rect x="38.8" y="36" width="10" height="30" fill="#f0dfb4"/>
+            <rect x="38.8" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+            <rect x="43.199999999999996" y="36" width="1.2" height="30" fill="#6f6779"/><rect x="52.2" y="36" width="10" height="30" fill="#f0dfb4"/>
+            <rect x="52.2" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+            <rect x="56.6" y="36" width="1.2" height="30" fill="#6f6779"/>
+  <rect x="64" y="36" width="10" height="30" fill="#6c6478"/>
+  <rect x="64" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+  <rect x="66" y="48" width="6" height="2" fill="#a89fb0"/>
   <!-- pavement -->
-  <rect x="0" y="78" width="160" height="18" fill="#1c1a21"/>
-  <rect x="0" y="78" width="160" height="1.6" fill="#3a3442"/>
+  <rect x="0" y="78" width="160" height="18" fill="#443f4f"/>
+  <rect x="0" y="78" width="160" height="1.6" fill="#6c6478"/>
   <!-- queue of five small silhouettes -->
   
-    <circle cx="26" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M23.4 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M24.4 86 l-0.8 6 M27.6 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>
-    <circle cx="39" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M36.4 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M37.4 86 l-0.8 6 M40.6 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>
-    <circle cx="52" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M49.4 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M50.4 86 l-0.8 6 M53.6 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>
-    <circle cx="65" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M62.4 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M63.4 86 l-0.8 6 M66.6 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>
-    <circle cx="78" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M75.4 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M76.4 86 l-0.8 6 M79.6 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>
+    <circle cx="26" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M23.4 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M24.4 86 l-0.8 6 M27.6 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>
+    <circle cx="39" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M36.4 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M37.4 86 l-0.8 6 M40.6 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>
+    <circle cx="52" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M49.4 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M50.4 86 l-0.8 6 M53.6 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>
+    <circle cx="65" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M62.4 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M63.4 86 l-0.8 6 M66.6 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>
+    <circle cx="78" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M75.4 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M76.4 86 l-0.8 6 M79.6 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>
   <!-- small black panel at the right reading $2.36bn -->
-  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="#0b0a0e"/>
-  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="none" stroke="#4a4350" stroke-width="0.9"/>
+  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="#2a2632"/>
+  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="none" stroke="#6f6779" stroke-width="0.9"/>
   <text x="136" y="43" font-family="Helvetica,Arial,sans-serif" font-size="9.4"
         font-weight="700" text-anchor="middle" fill="#e8c56a">$2.36bn</text>
-  <rect x="121" y="48" width="30" height="1.2" fill="#4a4350"/>
-  <rect x="116" y="60" width="40" height="2.4" fill="#2a2530"/></svg></span></div>
+  <rect x="121" y="48" width="30" height="1.2" fill="#6f6779"/>
+  <rect x="116" y="60" width="40" height="2.4" fill="#585162"/></svg></span></div>
     <div class="kick3"><i class="dot">13</i>World · GAMES · GTA VI</div>
     <h3 class="ch">GTA VI sells $2.36 billion in its first day</h3>
   </article></div></section>
-  <section class="band briefs" data-block="briefs" style="height:122px"><div class="bh">
+  <section class="band briefs" data-block="briefs" style="height:137px"><div class="bh">
       <span class="bht">Also on Thursday 19 November 2026</span>
-      <span class="bhn">16 more stories, each with the outlet that filed it</span>
+      <span class="bhn">18 more stories, each with the outlet that filed it</span>
     </div>
     <div class="bl">
       <div class="bc">
@@ -876,56 +882,66 @@
         </div>
         <div class="br" data-brief="20">
           <span class="bn">20</span>
-          <span class="bt" title="Tanker burns after a mine strike east of Hormuz">Tanker burns after a mine strike east of Hormuz</span>
-          <span class="bo">Al Jazeera</span>
+          <span class="bt" title="Xi tells Washington to do the “right thing” on Taiwan">Xi tells Washington to do the “right thing” on Taiwan</span>
+          <span class="bo">Xinhua</span>
         </div>
         <div class="br" data-brief="21">
           <span class="bn">21</span>
-          <span class="bt" title="Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia">Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia</span>
-          <span class="bo">Nikkei</span>
-        </div></div><div class="bc">
+          <span class="bt" title="Manila signs its first Latin America trade deal, with Chile">Manila signs its first Latin America trade deal, with Chile</span>
+          <span class="bo">Inquirer</span>
+        </div>
         <div class="br" data-brief="22">
           <span class="bn">22</span>
-          <span class="bt" title="Kenya picks a US-led group for Mrima Hill rare earths">Kenya picks a US-led group for Mrima Hill rare earths</span>
-          <span class="bo">Reuters</span>
-        </div>
+          <span class="bt" title="Tanker burns after a mine strike east of Hormuz">Tanker burns after a mine strike east of Hormuz</span>
+          <span class="bo">Al Jazeera</span>
+        </div></div><div class="bc">
         <div class="br" data-brief="23">
           <span class="bn">23</span>
-          <span class="bt" title="Rwanda calls the US approach to the DR Congo deal skewed">Rwanda calls the US approach to the DR Congo deal skewed</span>
-          <span class="bo">France 24</span>
+          <span class="bt" title="Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia">Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia</span>
+          <span class="bo">Nikkei</span>
         </div>
         <div class="br" data-brief="24">
           <span class="bn">24</span>
-          <span class="bt" title="Appeals court halts Venezuelan protected status order">Appeals court halts Venezuelan protected status order</span>
-          <span class="bo">AP</span>
+          <span class="bt" title="Kenya picks a US-led group for Mrima Hill rare earths">Kenya picks a US-led group for Mrima Hill rare earths</span>
+          <span class="bo">Reuters</span>
         </div>
         <div class="br" data-brief="25">
           <span class="bn">25</span>
-          <span class="bt" title="A US official floated ceding Guyanese land to Venezuela">A US official floated ceding Guyanese land to Venezuela</span>
-          <span class="bo">Reuters</span>
+          <span class="bt" title="Rwanda calls the US approach to the DR Congo deal skewed">Rwanda calls the US approach to the DR Congo deal skewed</span>
+          <span class="bo">France 24</span>
         </div>
         <div class="br" data-brief="26">
           <span class="bn">26</span>
-          <span class="bt" title="White House fires its national cyber director">White House fires its national cyber director</span>
-          <span class="bo">France 24</span>
+          <span class="bt" title="Appeals court halts Venezuelan protected status order">Appeals court halts Venezuelan protected status order</span>
+          <span class="bo">AP</span>
         </div>
         <div class="br" data-brief="27">
           <span class="bn">27</span>
-          <span class="bt" title="Tonga declares an emergency as the El Niño drought deepens">Tonga declares an emergency as the El Niño drought deepens</span>
-          <span class="bo">RNZ</span>
+          <span class="bt" title="A US official floated ceding Guyanese land to Venezuela">A US official floated ceding Guyanese land to Venezuela</span>
+          <span class="bo">Reuters</span>
         </div>
         <div class="br" data-brief="28">
           <span class="bn">28</span>
-          <span class="bt" title="No UN secretary-general when Guterres leaves on 31 Dec">No UN secretary-general when Guterres leaves on 31 Dec</span>
-          <span class="bo">Reuters</span>
+          <span class="bt" title="White House fires its national cyber director">White House fires its national cyber director</span>
+          <span class="bo">France 24</span>
         </div>
         <div class="br" data-brief="29">
           <span class="bn">29</span>
+          <span class="bt" title="Tonga declares an emergency as the El Niño drought deepens">Tonga declares an emergency as the El Niño drought deepens</span>
+          <span class="bo">RNZ</span>
+        </div>
+        <div class="br" data-brief="30">
+          <span class="bn">30</span>
+          <span class="bt" title="No UN secretary-general when Guterres leaves on 31 Dec">No UN secretary-general when Guterres leaves on 31 Dec</span>
+          <span class="bo">Reuters</span>
+        </div>
+        <div class="br" data-brief="31">
+          <span class="bn">31</span>
           <span class="bt" title="Voyager 1 is now one light-day out, 25.9 billion km">Voyager 1 is now one light-day out, 25.9 billion km</span>
           <span class="bo">NASA · CNN</span>
         </div></div>
     </div></section>
-  <section class="band bottom-band" data-block="bottom" style="height:130px"><div class="bottom"><div class="mapwrap">
+  <section class="band bottom-band" data-block="bottom" style="height:128px"><div class="bottom"><div class="mapwrap">
     <div class="maptitle">Where the day happened<span>each dot is one story; Voyager 1 is past the frame</span></div>
     <svg class="map" viewBox="0 0 216 92" preserveAspectRatio="xMidYMid meet"
          role="img" aria-label="World map, one dot per story">
@@ -1009,6 +1025,14 @@
             fill="#fdfaf2" opacity="0.85"/>
     <circle cx="117.8" cy="20.9" r="1.35"
             fill="#472a5c" opacity="0.72"/>
+    <circle cx="177.8" cy="26.4" r="2.1"
+            fill="#fdfaf2" opacity="0.85"/>
+    <circle cx="177.8" cy="26.4" r="1.35"
+            fill="#235040" opacity="0.72"/>
+    <circle cx="180.6" cy="43.0" r="2.1"
+            fill="#fdfaf2" opacity="0.85"/>
+    <circle cx="180.6" cy="43.0" r="1.35"
+            fill="#235040" opacity="0.72"/>
     <circle cx="141.9" cy="35.2" r="2.1"
             fill="#fdfaf2" opacity="0.85"/>
     <circle cx="141.9" cy="35.2" r="1.35"
@@ -1053,7 +1077,7 @@
       Wednesday 18 November, so they are named here and drawn nowhere.</p>
     <div class="xlist"><div class="xi">The Fed minutes</div><div class="xi">Bahrain and Kuwait intercepting drones</div><div class="xi">UK inflation at 3.6%</div><div class="xi">Jeffries winning the speaker nomination</div><div class="xi">The EU’s €45bn loan for Kyiv</div><div class="xi">Van Gogh’s $190.4m chestnut trees</div></div>
   </div></div></section>
-  <footer class="footer band" data-block="footer" style="height:14px">
+  <footer class="footer band" data-block="footer" style="height:16px">
     <span class="fl">Thursday 19 November 2026 · every story names the outlet that reported it</span>
     <span class="fr">The Day in World News</span>
   </footer>

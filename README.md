@@ -22,7 +22,7 @@ outlet that filed each; a dotted world map with one dot per story; and a black
 `Date check` panel naming the six stories that broke on Wednesday 18 November and are
 therefore drawn nowhere on this page.
 
-29 stories in total, 13 of them drawn: three leads and ten cards carry a headline
+31 stories in total, 13 of them drawn: three leads and ten cards carry a headline
 only, and the three leads carry a deck of at most 16 words. No other story on the
 page has a sentence attached.
 
@@ -69,7 +69,7 @@ is verified by measurement rather than by eye.
 
 | file | what it is |
 | --- | --- |
-| `news.mjs` | the day's facts: 29 stories, numbers, exclusions, map coordinates |
+| `news.mjs` | the day's facts: 31 stories, numbers, exclusions, map coordinates |
 | `art.mjs` | the 13 scene drawings, each authored in a `0 0 160 96` viewBox |
 | `compose.mjs` | layout, build, Chrome render, and the measurement probe |
 | `page.html` | generated broadsheet page |

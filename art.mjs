@@ -111,27 +111,27 @@ function riyadh() {
     `<path d="M${x} ${y} l${s} ${s * 1.6} l${-s * 1.3} ${s * 0.3} Z" fill="#cfe0ee" opacity="0.92"/>`
   ).join('');
   return `
-  <rect width="160" height="96" fill="${NIGHT}"/>
-  <rect x="0" y="0" width="160" height="34" fill="${NIGHT_2}"/>
+  <rect width="160" height="96" fill="#31456a"/>
+  <rect x="0" y="0" width="160" height="34" fill="#3d5479"/>
   <!-- scattered stars -->
   <circle cx="24" cy="12" r="0.7" fill="#c9d6e4"/><circle cx="52" cy="7" r="0.6" fill="#c9d6e4"/>
   <circle cx="126" cy="10" r="0.7" fill="#c9d6e4"/><circle cx="146" cy="20" r="0.6" fill="#c9d6e4"/>
   <!-- distant skyline -->
-  <rect x="0" y="66" width="18" height="30" fill="#16223a"/>
-  <rect x="18" y="58" width="14" height="38" fill="#1b2a45"/>
-  <rect x="32" y="70" width="16" height="26" fill="#16223a"/>
-  <rect x="110" y="62" width="15" height="34" fill="#1b2a45"/>
-  <rect x="125" y="72" width="13" height="24" fill="#16223a"/>
-  <rect x="138" y="60" width="22" height="36" fill="#1b2a45"/>
+  <rect x="0" y="66" width="18" height="30" fill="#3a4f6f"/>
+  <rect x="18" y="58" width="14" height="38" fill="#43597c"/>
+  <rect x="32" y="70" width="16" height="26" fill="#3a4f6f"/>
+  <rect x="110" y="62" width="15" height="34" fill="#43597c"/>
+  <rect x="125" y="72" width="13" height="24" fill="#3a4f6f"/>
+  <rect x="138" y="60" width="22" height="36" fill="#43597c"/>
   <!-- the tower: lit window grid, top rows blown out -->
-  <rect x="64" y="6" width="32" height="90" fill="${TOWER}"/>
-  <rect x="64" y="6" width="32" height="90" fill="none" stroke="#0a101c" stroke-width="1"/>
+  <rect x="64" y="6" width="32" height="90" fill="#56719b"/>
+  <rect x="64" y="6" width="32" height="90" fill="none" stroke="#28374f" stroke-width="1"/>
   ${Array.from({ length: 12 }, (_, r) => Array.from({ length: 5 }, (_, c) =>
     `<rect x="${67.4 + c * 5.6}" y="${21 + r * 5.2}" width="3.6" height="3.2"
            fill="${(r * 7 + c * 3) % 5 === 0 ? '#7d6740' : LIT}"/>`
   ).join('')).join('')}
   <!-- blown out floors at the top -->
-  <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z" fill="#05080e"/>
+  <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z" fill="#1e2c44"/>
   <path d="M64 6 L96 6 L96 20 L91 22 L87 19 L82 23 L77 18 L72 22 L68 19 L64 21 Z"
         fill="none" stroke="#3a4a66" stroke-width="0.7"/>
   ${shards}
@@ -345,33 +345,33 @@ function greenland() {
 // ---------- 9. dhaka ----------
 function dhaka() {
   return `
-  <rect width="160" height="96" fill="#1c1a2b"/>
-  <rect x="0" y="0" width="160" height="26" fill="#241f34"/>
+  <rect width="160" height="96" fill="#3b3752"/>
+  <rect x="0" y="0" width="160" height="26" fill="#463f5f"/>
   <!-- fire glow behind the house -->
   <path d="M52 52 Q46 36 54 22 Q58 32 62 22 Q66 34 64 52 Z" fill="#d9631e"/>
   <path d="M70 56 Q64 40 72 28 Q76 38 80 28 Q86 40 82 58 Z" fill="#e8822a"/>
   <path d="M94 54 Q88 40 96 26 Q100 36 104 26 Q110 38 106 56 Z" fill="#d9631e"/>
   <path d="M54 50 Q52 40 58 32 Q62 40 60 50 Z" fill="#f4b64a"/>
   <path d="M74 54 Q72 44 78 36 Q82 44 80 56 Z" fill="#f4b64a"/>
-  <circle cx="80" cy="20" r="5" fill="#3c3346" opacity="0.9"/>
-  <circle cx="66" cy="12" r="6" fill="#332c3e" opacity="0.9"/>
+  <circle cx="80" cy="20" r="5" fill="#5e5470" opacity="0.9"/>
+  <circle cx="66" cy="12" r="6" fill="#544b63" opacity="0.9"/>
   <!-- low house with arched roofline -->
-  <path d="M26 66 L26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48 L108 66 Z" fill="#4a3b46"/>
-  <path d="M26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48" fill="none" stroke="#2a222c" stroke-width="1.6"/>
-  <rect x="26" y="64" width="82" height="4" fill="#2a222c"/>
+  <path d="M26 66 L26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48 L108 66 Z" fill="#6d5a63"/>
+  <path d="M26 48 Q40 38 58 44 Q70 38 84 46 Q96 40 108 48" fill="none" stroke="#4b3f49" stroke-width="1.6"/>
+  <rect x="26" y="64" width="82" height="4" fill="#4b3f49"/>
   <rect x="34" y="52" width="10" height="12" fill="#f0a63c"/>
-  <rect x="50" y="52" width="10" height="12" fill="#2a222c"/>
+  <rect x="50" y="52" width="10" height="12" fill="#4b3f49"/>
   <rect x="66" y="52" width="10" height="12" fill="#f0a63c"/>
-  <rect x="82" y="52" width="10" height="12" fill="#2a222c"/>
+  <rect x="82" y="52" width="10" height="12" fill="#4b3f49"/>
   <rect x="96" y="52" width="6" height="12" fill="#f0a63c"/>
   <!-- roof fire along the ridge -->
   <path d="M30 45 Q36 40 42 45 Q48 40 54 45 Q60 41 64 45 Q70 40 76 45 Q82 41 88 45 Q94 40 100 45" 
         fill="none" stroke="#e8721f" stroke-width="3"/>
   <!-- road and lamps -->
-  <rect x="0" y="68" width="160" height="28" fill="#2c2a33"/>
-  <rect x="0" y="68" width="160" height="1.6" fill="#464350"/>
+  <rect x="0" y="68" width="160" height="28" fill="#4d4a58"/>
+  <rect x="0" y="68" width="160" height="1.6" fill="#6a6678"/>
   ${[16, 120, 146].map(x => `
-    <rect x="${x}" y="52" width="1.6" height="17" fill="#5a5766"/>
+    <rect x="${x}" y="52" width="1.6" height="17" fill="#7a7688"/>
     <circle cx="${x + 0.8}" cy="50" r="2.6" fill="#f6d98a"/>`).join('')}
   <!-- bus, lower left -->
   <rect x="8" y="72" width="42" height="15" rx="1.6" fill="#c8352f"/>
@@ -506,11 +506,11 @@ function cyclone() {
 function gta() {
   const queue = [26, 39, 52, 65, 78];
   return `
-  <rect width="160" height="96" fill="#151319"/>
-  <rect x="0" y="0" width="160" height="18" fill="#1d1a23"/>
+  <rect width="160" height="96" fill="#3a3644"/>
+  <rect x="0" y="0" width="160" height="18" fill="#443f50"/>
   <!-- storefront block -->
-  <rect x="6" y="16" width="104" height="62" fill="#2a2530"/>
-  <rect x="6" y="16" width="104" height="3" fill="#3a3442"/>
+  <rect x="6" y="16" width="104" height="62" fill="#585162"/>
+  <rect x="6" y="16" width="104" height="3" fill="#6c6478"/>
   <!-- red sign -->
   <rect x="12" y="20" width="60" height="11" fill="${RED}"/>
   <rect x="12" y="20" width="60" height="11" fill="none" stroke="#8f231f" stroke-width="0.9"/>
@@ -521,27 +521,27 @@ function gta() {
   ${[0, 1, 2, 3].map(i => {
     const x = 12 + i * 13.4;
     return `<rect x="${x}" y="36" width="10" height="30" fill="#f0dfb4"/>
-            <rect x="${x}" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-            <rect x="${x + 4.4}" y="36" width="1.2" height="30" fill="#4a4350"/>`;
+            <rect x="${x}" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+            <rect x="${x + 4.4}" y="36" width="1.2" height="30" fill="#6f6779"/>`;
   }).join('')}
-  <rect x="64" y="36" width="10" height="30" fill="#3a3442"/>
-  <rect x="64" y="36" width="10" height="30" fill="none" stroke="#4a4350" stroke-width="0.8"/>
-  <rect x="66" y="48" width="6" height="2" fill="#8b8194"/>
+  <rect x="64" y="36" width="10" height="30" fill="#6c6478"/>
+  <rect x="64" y="36" width="10" height="30" fill="none" stroke="#6f6779" stroke-width="0.8"/>
+  <rect x="66" y="48" width="6" height="2" fill="#a89fb0"/>
   <!-- pavement -->
-  <rect x="0" y="78" width="160" height="18" fill="#1c1a21"/>
-  <rect x="0" y="78" width="160" height="1.6" fill="#3a3442"/>
+  <rect x="0" y="78" width="160" height="18" fill="#443f4f"/>
+  <rect x="0" y="78" width="160" height="1.6" fill="#6c6478"/>
   <!-- queue of five small silhouettes -->
   ${queue.map((x, i) => `
-    <circle cx="${x}" cy="70" r="2.8" fill="#0b0a0e"/>
-    <path d="M${x - 2.6} 74 h5.2 l1 12 h-7.2 Z" fill="#0b0a0e"/>
-    <path d="M${x - 1.6} 86 l-0.8 6 M${x + 1.6} 86 l0.8 6" stroke="#0b0a0e" stroke-width="2"/>`).join('')}
+    <circle cx="${x}" cy="70" r="2.8" fill="#2e2a36"/>
+    <path d="M${x - 2.6} 74 h5.2 l1 12 h-7.2 Z" fill="#2e2a36"/>
+    <path d="M${x - 1.6} 86 l-0.8 6 M${x + 1.6} 86 l0.8 6" stroke="#2e2a36" stroke-width="2"/>`).join('')}
   <!-- small black panel at the right reading $2.36bn -->
-  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="#0b0a0e"/>
-  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="none" stroke="#4a4350" stroke-width="0.9"/>
+  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="#2a2632"/>
+  <rect x="116" y="24" width="40" height="30" rx="1.6" fill="none" stroke="#6f6779" stroke-width="0.9"/>
   <text x="136" y="43" font-family="Helvetica,Arial,sans-serif" font-size="9.4"
         font-weight="700" text-anchor="middle" fill="${GOLD}">$2.36bn</text>
-  <rect x="121" y="48" width="30" height="1.2" fill="#4a4350"/>
-  <rect x="116" y="60" width="40" height="2.4" fill="#2a2530"/>`;
+  <rect x="121" y="48" width="30" height="1.2" fill="#6f6779"/>
+  <rect x="116" y="60" width="40" height="2.4" fill="#585162"/>`;
 }
 
 export const ART = { summit, icj, riyadh, kerch, ipo, cop, haiti, greenland, dhaka, mongolia, somalia, cyclone, gta };

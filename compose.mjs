@@ -21,6 +21,7 @@ const INK = '#14161a';
 const PAPER = '#fdfaf2';
 const RED = '#c8352f';
 const GOLD = '#e8c56a';
+const TINT = '#f3eee1';
 
 // Band heights in px. They must sum to exactly 1024; the rules between bands are
 // borders inside each band's own height, so nothing falls off the sheet.
@@ -28,15 +29,15 @@ const GOLD = '#e8c56a';
 // three leads, whose decks are capped at 16 words. Every band was re-cut against
 // the 300px reproduction: nothing sits below 9px, cards 15px, leads 24px.
 const H = {
-  masthead: 80,
+  masthead: 88,
   tally: 20,
-  numbers: 36,
-  leads: 254,
-  bandA: 184,
-  bandB: 184,
-  briefs: 122,
-  bottom: 130,
-  footer: 14
+  numbers: 37,
+  leads: 246,
+  bandA: 176,
+  bandB: 176,
+  briefs: 137,
+  bottom: 128,
+  footer: 16
 };
 
 const CONT = counts();
@@ -204,8 +205,8 @@ function build() {
 <title>The Day in World News — Thursday 19 November 2026</title>
 <style>
   :root{
-    --paper:${PAPER}; --ink:${INK}; --red:${RED}; --gold:${GOLD};
-    --hero-art:98px; --lede-art:92px; --card-art:118px;
+    --paper:${PAPER}; --ink:${INK}; --red:${RED}; --gold:${GOLD}; --tint:${TINT};
+    --hero-art:90px; --lede-art:84px; --card-art:110px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1024px;height:1024px;overflow:hidden;background:var(--paper)}
@@ -245,17 +246,21 @@ function build() {
   .tsc{font:700 13px/1 Georgia,serif;color:var(--gold);flex:0 0 auto}
 
   /* ---------- numbers ---------- */
+  /* v4: this was a black band. Now a cream band between two heavy ink rules,
+     label in red, numerals in ink, captions in red small caps. The strip still
+     reads as a distinct object, but it no longer reads as a slab. */
+  .numbers{background:var(--tint);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
   .nb{display:flex;height:100%;align-items:stretch}
-  .nplate{flex:0 0 112px;background:var(--ink);color:var(--paper);display:flex;
-          flex-direction:column;justify-content:center;padding-left:12px;gap:3px}
+  .nplate{flex:0 0 112px;display:flex;flex-direction:column;justify-content:center;
+          padding-left:12px;gap:3px}
   .nplate span{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;
-               white-space:nowrap}
-  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:3px 0 0 11px;
+               white-space:nowrap;color:var(--red)}
+  .nc{flex:1 1 0;min-width:0;border-left:1px solid #cfc7b4;padding:3px 0 0 11px;
       display:flex;flex-direction:column;justify-content:center}
-  .nf{font:700 20px/1.02 Georgia,serif;color:var(--red);letter-spacing:-.018em;
+  .nf{font:700 21px/1.02 Georgia,serif;color:var(--ink);letter-spacing:-.018em;
       white-space:nowrap}
-  .ncap{font:600 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.05em;
-        text-transform:uppercase;color:#5b564c;margin-top:2px}
+  .ncap{font:700 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.07em;
+        text-transform:uppercase;color:var(--red);margin-top:2px}
 
   /* ---------- leads ---------- */
   .leads{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.06fr) minmax(0,1fr);
@@ -303,16 +308,16 @@ function build() {
      the densest thing left on the sheet, so it gets the leading rather than more
      items: at 300px nine rows of air read as a list, eighteen rows read as texture. */
   .briefs{background:var(--paper)}
-  .bh{height:20px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
+  .bh{height:20px;border-bottom:2px solid var(--red);display:flex;align-items:center;
       justify-content:space-between;padding:0 12px}
-  .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em}
+  .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em;color:var(--ink)}
   .bhn{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
-       color:var(--gold)}
+       color:var(--red)}
   .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 22px);
-      padding:2px 12px 0;column-gap:22px}
+      padding:6px 12px 0;column-gap:22px}
   .bc{min-width:0;padding-right:20px;border-right:1px solid #c6c0b2}
   .bc:last-child{border-right:none;padding-right:0}
-  .br{display:flex;align-items:baseline;gap:5px;height:12.4px;overflow:hidden}
+  .br{display:flex;align-items:baseline;gap:5px;height:12.2px;overflow:hidden}
   .bn{font:700 9.4px/1 Georgia,serif;color:var(--red);width:15px;flex:0 0 15px;text-align:right}
   .bt{font:400 9.4px/1.32 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -334,22 +339,24 @@ function build() {
              text-transform:uppercase;color:#3f3b34;display:inline-flex;align-items:center;gap:2.5px;
              white-space:nowrap}
   .mapkey .k i{width:6.5px;height:6.5px;border-radius:50%;display:inline-block;flex:0 0 auto}
-  .xp{margin:4px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
-      color:var(--paper);padding:5px 12px 0 12px;height:calc(100% - 4px);overflow:hidden}
-  .xhead{font:700 12px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
-  .xnote{font:400 9.6px/1.26 Georgia,serif;color:#ded8c8;margin-top:3px;max-width:690px}
+  .xp{margin:4px 12px 0 0;background:var(--tint);border-left:3px solid var(--red);
+      border-top:1px solid #d8d0bd;border-right:1px solid #d8d0bd;
+      border-bottom:1px solid #d8d0bd;color:var(--ink);
+      padding:5px 12px 0 10px;height:calc(100% - 4px);overflow:hidden}
+  .xhead{font:700 12px/1 Georgia,serif;color:var(--red);letter-spacing:.01em}
+  .xnote{font:400 9.6px/1.26 Georgia,serif;color:#4b473f;margin-top:3px;max-width:690px}
   .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:3px}
-  .xi{font:400 9.6px/1.46 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
+  .xi{font:400 9.6px/1.46 Georgia,serif;color:var(--ink);padding-left:9px;position:relative;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .xi:before{content:"";position:absolute;left:0;top:6px;width:3px;height:3px;
              background:var(--red)}
 
   /* ---------- footer ---------- */
-  .footer{background:var(--ink);color:var(--paper);display:flex;align-items:center;
-          justify-content:space-between;padding:0 12px}
+  .footer{background:var(--paper);border-top:2px solid var(--red);
+          display:flex;align-items:center;justify-content:space-between;padding:0 12px}
   .fl,.fr{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.07em;
-          text-transform:uppercase;white-space:nowrap}
-  .fr{color:var(--gold)}
+          text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+  .fr{color:var(--red)}
 </style></head>
 <body><div class="page">
   ${band('masthead', masthead())}
@@ -393,6 +400,7 @@ const PROBE = `(() => {
       minx=Math.min(minx,g.x); miny=Math.min(miny,g.y);
       maxx=Math.max(maxx,g.x+g.width); maxy=Math.max(maxy,g.y+g.height); } catch(e){} }
     return { key: el.dataset.key, w:+b.width.toFixed(2), h:+b.height.toFixed(2),
+             left:+b.left.toFixed(1), top:+b.top.toFixed(1),
              aspect:+(b.width/b.height).toFixed(4), boxW:+box.width.toFixed(2),
              boxH:+box.height.toFixed(2), bounds:[+minx.toFixed(1),+miny.toFixed(1),
              +maxx.toFixed(1),+maxy.toFixed(1)] };
@@ -594,6 +602,11 @@ if (process.argv.includes('--html')) {
   const artOpen = m.arts.filter(a => Math.abs(a.w - a.boxW) > 0.6 || Math.abs(a.h - a.boxH) > 0.6);
   console.log('art off-canvas: ' + (off.length ? off.map(a => a.key + ' ' + a.bounds.join(',')).join(' | ') : 'none'));
   console.log('art stretched:  ' + (stretch.length ? stretch.map(a => a.key + ' ' + a.aspect).join(' | ') : 'none'));
+  // per-drawing darkness, so "lighten the dark ones" is a measurement, not a guess
+  writeFileSync(join(DIR, 'artboxes.json'),
+    JSON.stringify(m.arts.map(a => ({ key: a.key, left: a.left, top: a.top,
+      w: a.w, h: a.h }))));
+  console.log('art boxes -> artboxes.json (for tools/artink.mjs)');
   console.log('art not filling its box: ' + (artOpen.length ? artOpen.map(a => a.key).join(' | ') : 'none'));
   console.log('');
   console.log('briefs truncated: ' + (m.trunc.length ? m.trunc.join(' | ') : 'none'));
