@@ -10,3 +10,5 @@ top*.png
 bottom*.png
 numbers*.png
 redblock*.png
+artboxes.json
+transcripts.tar.gz
