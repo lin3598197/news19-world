@@ -1,0 +1,12 @@
+{
+  "name": "news19-world",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "make.fun news-image-20261119 - Thursday 19 November 2026, one broadsheet page",
+  "license": "MIT",
+  "scripts": {
+    "build": "node compose.mjs",
+    "ship": "node --experimental-strip-types main.ts"
+  }
+}
