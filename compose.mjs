@@ -29,14 +29,14 @@ const GOLD = '#e8c56a';
 // the 300px reproduction: nothing sits below 9px, cards 15px, leads 24px.
 const H = {
   masthead: 80,
-  tally: 20,
+  tally: 15,
   numbers: 36,
   leads: 254,
   bandA: 184,
   bandB: 184,
-  briefs: 122,
-  bottom: 130,
-  footer: 14
+  briefs: 130,
+  bottom: 129,
+  footer: 12
 };
 
 const CONT = counts();
@@ -303,13 +303,13 @@ function build() {
      the densest thing left on the sheet, so it gets the leading rather than more
      items: at 300px nine rows of air read as a list, eighteen rows read as texture. */
   .briefs{background:var(--paper)}
-  .bh{height:20px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
+  .bh{height:14px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
       justify-content:space-between;padding:0 12px}
   .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em}
   .bhn{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
        color:var(--gold)}
-  .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 22px);
-      padding:2px 12px 0;column-gap:22px}
+  .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 15px);
+      padding:1px 12px 0;column-gap:22px}
   .bc{min-width:0;padding-right:20px;border-right:1px solid #c6c0b2}
   .bc:last-child{border-right:none;padding-right:0}
   .br{display:flex;align-items:baseline;gap:5px;height:12.4px;overflow:hidden}

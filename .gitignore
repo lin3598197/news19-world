@@ -12,3 +12,6 @@ numbers*.png
 redblock*.png
 artboxes.json
 transcripts.tar.gz
+.proof/
+out/
+.vision300.raw

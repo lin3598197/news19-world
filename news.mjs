@@ -12,7 +12,7 @@ export const DAY = {
   strap:
     'Everything here happened, or was first reported, on Thursday 19 November 2026 · nothing carried over from the 18th',
   briefHeader: 'Also on Thursday 19 November 2026',
-  briefNote: '16 more stories, each with the outlet that filed it',
+  briefNote: '18 more stories, each with the outlet that filed it',
   footerLeft: 'Thursday 19 November 2026 · every story names the outlet that reported it',
   footerRight: 'The Day in World News'
 };
@@ -102,12 +102,11 @@ export const STORIES = [
     outlet: 'AP · Sensor Tower'
   },
 
-  // Briefs, stories 14 to 29 — one line each, 16 of them.
+  // Briefs, stories 14 to 31 — one line each, 18 of them.
   // Cut in v2 for legibility: the Madrid debate line, Mélenchon, the Adwan
   // detention, the Mo Ibrahim quote, the Alaska suit and Albanese at APEC — the
-  // six with the least consequence. v3 cut two more (the Beijing Taiwan line and
-  // the Manila–Chile trade deal) to buy leading for the remaining 16 at 9.4px,
-  // and restored the two Americas lines so the tally stays balanced.
+  // six with the least consequence. v5 restores the Beijing Taiwan line and the
+  // Manila–Chile trade deal so the page carries the full 31 stories again.
   // Every line keeps a named country and an outcome, so the rail reads as news.
   { n: 14, region: 'Europe', tag: 'BERLIN', art: null, lon: 13.4, lat: 52.5, headline: 'EU leaders meet in Berlin to rally support for Kyiv', outlet: 'AFP' },
   { n: 15, region: 'Europe', tag: 'PARIS', art: null, lon: 2.3, lat: 48.9, headline: 'Macron reopens the NATO question for Ukraine', outlet: 'France 24' },
@@ -124,7 +123,9 @@ export const STORIES = [
   { n: 26, region: 'Americas', tag: 'WASHINGTON', art: null, lon: -77, lat: 38.9, headline: 'White House fires its national cyber director', outlet: 'France 24' },
   { n: 27, region: 'Oceania', tag: 'TONGA', art: null, lon: -175.2, lat: -21.1, headline: 'Tonga declares an emergency as the El Niño drought deepens', outlet: 'RNZ' },
   { n: 28, region: 'World', tag: 'UNITED NATIONS', art: null, lon: -74, lat: 40.7, headline: 'No UN secretary-general when Guterres leaves on 31 Dec', outlet: 'Reuters' },
-  { n: 29, region: 'World', tag: 'VOYAGER 1', art: null, lon: null, lat: null, headline: 'Voyager 1 is now one light-day out, 25.9 billion km', outlet: 'NASA · CNN' }
+  { n: 29, region: 'World', tag: 'VOYAGER 1', art: null, lon: null, lat: null, headline: 'Voyager 1 is now one light-day out, 25.9 billion km', outlet: 'NASA · CNN' },
+  { n: 30, region: 'Asia', tag: 'BEIJING · TAIPEI', art: null, lon: 116.4, lat: 39.9, headline: 'Xi tells Washington to do the “right thing” on Taiwan', outlet: 'Xinhua' },
+  { n: 31, region: 'Asia', tag: 'MANILA · SANTIAGO', art: null, lon: 121, lat: 14.6, headline: 'Manila signs its first Latin America trade deal, with Chile', outlet: 'Inquirer' }
 ];
 
 export const NUMBERS = [
