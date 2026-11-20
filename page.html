@@ -4,7 +4,7 @@
 <style>
   :root{
     --paper:#fdfaf2; --ink:#14161a; --red:#c8352f; --gold:#e8c56a;
-    --hero-art:96px; --lede-art:90px; --card-art:106px;
+    --hero-art:98px; --lede-art:92px; --card-art:118px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1024px;height:1024px;overflow:hidden;background:var(--paper)}
@@ -17,47 +17,47 @@
   .band:last-child{border-bottom:none}
 
   /* ---------- masthead ---------- */
-  .mh{display:grid;grid-template-columns:88px 1fr 116px;height:100%}
+  .mh{display:grid;grid-template-columns:92px 1fr 122px;height:100%}
   .mb{background:var(--red);color:var(--paper);display:flex;flex-direction:column;
-      align-items:center;justify-content:center;gap:1px;padding-top:2px}
-  .mb-mon{font:700 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.20em;opacity:.92}
-  .mb-day{font:700 34px/.92 Georgia,serif;letter-spacing:-.01em}
-  .mb-dow{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.24em;opacity:.92}
+      align-items:center;justify-content:center;gap:2px;padding-top:2px}
+  .mb-mon{font:700 12px/1 Helvetica,Arial,sans-serif;letter-spacing:.20em;opacity:.94}
+  .mb-day{font:700 36px/.92 Georgia,serif;letter-spacing:-.01em}
+  .mb-dow{font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.24em;opacity:.94}
   .mid{padding:6px 18px 0;display:flex;flex-direction:column;justify-content:center}
-  .kick{font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.22em;color:var(--red);
+  .kick{font:700 10.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.22em;color:var(--red);
         margin-bottom:5px}
-  .date{font:700 37px/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.015em}
-  .strap{font:italic 9.4px/1.22 Georgia,serif;color:#4b473f;margin-top:5px;letter-spacing:.005em}
+  .date{font:700 39px/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.018em}
+  .strap{font:italic 9.6px/1.2 Georgia,serif;color:#4b473f;margin-top:5px;letter-spacing:.004em}
   .mr{border-left:1px solid var(--ink);display:flex;flex-direction:column;
       align-items:center;justify-content:center;padding-top:2px}
-  .tallynum{font:700 40px/.86 Georgia,serif;letter-spacing:-.03em;color:var(--ink)}
-  .tallylab{font:700 8.4px/1.4 Helvetica,Arial,sans-serif;letter-spacing:.20em;margin-top:2px}
-  .tallysub{font:700 8.2px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.10em;color:var(--red)}
+  .tallynum{font:700 42px/.86 Georgia,serif;letter-spacing:-.03em;color:var(--ink)}
+  .tallylab{font:700 9.2px/1.3 Helvetica,Arial,sans-serif;letter-spacing:.18em;margin-top:2px}
+  .tallysub{font:700 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.09em;color:var(--red)}
 
   /* ---------- tally bar ---------- */
   .tb{display:flex;height:100%}
   .ts{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--paper);
       border-right:1.5px solid var(--paper);overflow:hidden;min-width:0}
   .ts:last-child{border-right:none}
-  .tsn{font:700 8.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  .tsn{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;
        white-space:nowrap}
-  .tsc{font:700 11.5px/1 Georgia,serif;color:var(--gold);flex:0 0 auto}
+  .tsc{font:700 13px/1 Georgia,serif;color:var(--gold);flex:0 0 auto}
 
   /* ---------- numbers ---------- */
   .nb{display:flex;height:100%;align-items:stretch}
-  .nplate{flex:0 0 104px;background:var(--ink);color:var(--paper);display:flex;
-          flex-direction:column;justify-content:center;padding-left:11px;gap:2px}
-  .nplate span{font:700 8.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.10em;
+  .nplate{flex:0 0 112px;background:var(--ink);color:var(--paper);display:flex;
+          flex-direction:column;justify-content:center;padding-left:12px;gap:3px}
+  .nplate span{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;
                white-space:nowrap}
-  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:3px 0 0 10px;
+  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:3px 0 0 11px;
       display:flex;flex-direction:column;justify-content:center}
-  .nf{font:700 16.5px/1.02 Georgia,serif;color:var(--red);letter-spacing:-.015em;
+  .nf{font:700 20px/1.02 Georgia,serif;color:var(--red);letter-spacing:-.018em;
       white-space:nowrap}
-  .ncap{font:600 8.4px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.06em;
+  .ncap{font:600 9px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.05em;
         text-transform:uppercase;color:#5b564c;margin-top:2px}
 
   /* ---------- leads ---------- */
-  .leads{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr) minmax(0,1fr);
+  .leads{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.06fr) minmax(0,1fr);
          column-gap:0;padding:8px 12px 0}
   .lede{padding:0 12px 4px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
   .lede:first-child{border-left:none;padding-left:0}
@@ -65,71 +65,80 @@
           outline:1px solid #b9b3a4;outline-offset:0}
   .artbox .no{display:block;width:100%;height:100%}
   .art{display:block;width:100%;height:100%}
-  .hero-art{height:var(--hero-art);width:calc(var(--hero-art) * 5 / 3);margin:0 auto}
+  /* v3 bugfix: the ".lede .artbox" rule (specificity 0,2,0) was beating
+     ".hero-art" (0,1,0), so the hero drawing rendered at the lede size. The hero
+     now wins on specificity instead. */
   .lede .artbox{height:var(--lede-art);width:calc(var(--lede-art) * 5 / 3);
                 margin:0 auto 4px}
-  .kick2{font:700 8.4px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.11em;
+  .lede.hero .artbox{height:var(--hero-art);width:calc(var(--hero-art) * 5 / 3)}
+  .kick2{font:700 9px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.10em;
          text-transform:uppercase;color:#4b473f;white-space:nowrap;overflow:hidden}
   .lede.sm .kick2{white-space:normal;line-height:1.15;letter-spacing:.05em}
   .kick2 b{color:var(--red);margin-right:2px}
-  .hl{font:700 21px/1.05 Georgia,serif;letter-spacing:-.014em;margin-top:4px;color:var(--ink)}
-  .lede.sm .hl{font-size:21px;line-height:1.05}
-  .deck{font:400 9.6px/1.3 Georgia,serif;color:#3f3b34;margin-top:4px}
-  .src{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
-       color:var(--red);margin-top:5px}
+  .hl{font:700 24px/1.06 Georgia,serif;letter-spacing:-.016em;margin-top:5px;color:var(--ink)}
+  .lede.sm .hl{font-size:24px;line-height:1.06}
+  .deck{font:400 10px/1.32 Georgia,serif;color:#3f3b34;margin-top:5px}
+  .src{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;
+       color:var(--red);margin-top:6px}
 
   /* ---------- picture bands ---------- */
-  .pics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:7px 12px 0}
-  .card{padding:0 8px 3px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
+  /* v3: art is as large as a 5-across grid allows. With 4px page padding and 3px
+     gutters each track is 203.2px, so a 5:3 box is 197.2 x 118.3 — the 196x118
+     target rounded to what actually fits without clipping. */
+  .pics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:6px 4px 0}
+  .card{padding:0 3px 3px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
   .card:first-child{border-left:none;padding-left:0}
-  .card .artbox{height:var(--card-art);width:calc(var(--card-art) * 5 / 3);margin-bottom:4px}
-  .kick3{font:700 8.2px/1.1 Helvetica,Arial,sans-serif;letter-spacing:.07em;
+  .card .artbox{height:var(--card-art);width:calc(var(--card-art) * 5 / 3);margin-bottom:5px}
+  .kick3{font:700 9px/1.1 Helvetica,Arial,sans-serif;letter-spacing:.06em;
          text-transform:uppercase;color:#4b473f;display:flex;align-items:center;gap:4px;
          white-space:nowrap;overflow:hidden}
-  .dot{font:700 8.4px/1 Helvetica,Arial,sans-serif;font-style:normal;color:var(--paper);
-       background:var(--red);border-radius:50%;width:12px;height:12px;display:inline-flex;
+  .dot{font:700 9px/1 Helvetica,Arial,sans-serif;font-style:normal;color:var(--paper);
+       background:var(--red);border-radius:50%;width:13px;height:13px;display:inline-flex;
        align-items:center;justify-content:center;flex:0 0 auto}
-  .ch{font:700 13px/1.1 Georgia,serif;letter-spacing:-.008em;margin-top:3px;color:var(--ink)}
+  .ch{font:700 15px/1.1 Georgia,serif;letter-spacing:-.01em;margin-top:4px;color:var(--ink)}
 
   /* ---------- briefs ---------- */
-  /* v2: 18 briefs in two columns of nine. Two columns buy ~2x the width per
-     line, which is what lets the rail sit at 9.2px instead of 7.5px. */
+  /* v3: 18 briefs in two columns of nine at 9.4px on a 12.4px pitch. The rail is
+     the densest thing left on the sheet, so it gets the leading rather than more
+     items: at 300px nine rows of air read as a list, eighteen rows read as texture. */
   .briefs{background:var(--paper)}
-  .bh{height:26px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
+  .bh{height:20px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
       justify-content:space-between;padding:0 12px}
-  .bht{font:700 11.6px/1 Georgia,serif;letter-spacing:.02em}
-  .bhn{font:700 8.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;
+  .bht{font:700 12px/1 Georgia,serif;letter-spacing:.02em}
+  .bhn{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
        color:var(--gold)}
-  .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 26px);
-      padding:3px 12px 0;column-gap:22px}
+  .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 22px);
+      padding:2px 12px 0;column-gap:22px}
   .bc{min-width:0;padding-right:20px;border-right:1px solid #c6c0b2}
   .bc:last-child{border-right:none;padding-right:0}
-  .br{display:flex;align-items:baseline;gap:5px;height:11.1px;overflow:hidden}
-  .bn{font:700 8.6px/1 Georgia,serif;color:var(--red);width:14px;flex:0 0 14px;text-align:right}
-  .bt{font:400 9.2px/1 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
+  .br{display:flex;align-items:baseline;gap:5px;height:12.4px;overflow:hidden}
+  .bn{font:700 9.4px/1 Georgia,serif;color:var(--red);width:15px;flex:0 0 15px;text-align:right}
+  .bt{font:400 9.4px/1.32 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bo{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;
+  .bo{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;
        color:var(--red);flex:0 0 auto;white-space:nowrap}
 
   /* ---------- bottom ---------- */
-  .bottom{display:grid;grid-template-columns:232px 1fr;gap:0}
+  .bottom{display:grid;grid-template-columns:274px 1fr;gap:0}
   .mapwrap{padding:0 10px 0 12px;display:flex;flex-direction:column;min-width:0}
-  .maptitle{font:700 8.4px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.10em;
+  .maptitle{font:700 9px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.09em;
             text-transform:uppercase;color:var(--ink)}
-  .maptitle span{display:block;font:italic 8.2px/1.15 Georgia,serif;letter-spacing:0;
+  .maptitle span{display:block;font:italic 9px/1.15 Georgia,serif;letter-spacing:0;
                  text-transform:none;color:#5b564c;margin-top:1px}
-  .map{width:100%;height:74px;margin-top:2px;display:block}
-  .mapkey{display:flex;flex-wrap:wrap;gap:0 5px;margin-top:2px}
-  .mapkey .k{font:700 8.4px/1.3 Helvetica,Arial,sans-serif;letter-spacing:0;
-             text-transform:uppercase;color:#3f3b34;display:inline-flex;align-items:center;gap:2.5px}
-  .mapkey .k i{width:6px;height:6px;border-radius:50%;display:inline-block;flex:0 0 auto}
-  .mapkey .kn{font:italic 8.4px/1.3 Georgia,serif;color:#5b564c;flex-basis:100%}
-  .xp{margin:5px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
-      color:var(--paper);padding:6px 12px 0 12px;height:calc(100% - 5px);overflow:hidden}
-  .xhead{font:700 11.6px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
-  .xnote{font:400 8.6px/1.28 Georgia,serif;color:#ded8c8;margin-top:3px;max-width:660px}
-  .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:4px}
-  .xi{font:400 9.4px/1.5 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
+  .map{width:100%;height:80px;margin-top:2px;display:block}
+  /* v3: 4 + 3 across two rows so the key is 2 lines, not 3. At 9px, seven
+     region names on one row measures wider than the 216px column. */
+  .mapkey{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0 2px;margin-top:1px}
+  .mapkey .k{font:700 9px/1.26 Helvetica,Arial,sans-serif;letter-spacing:-.015em;
+             text-transform:uppercase;color:#3f3b34;display:inline-flex;align-items:center;gap:2.5px;
+             white-space:nowrap}
+  .mapkey .k i{width:6.5px;height:6.5px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .xp{margin:4px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
+      color:var(--paper);padding:5px 12px 0 12px;height:calc(100% - 4px);overflow:hidden}
+  .xhead{font:700 12px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
+  .xnote{font:400 9.6px/1.26 Georgia,serif;color:#ded8c8;margin-top:3px;max-width:690px}
+  .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:3px}
+  .xi{font:400 9.6px/1.46 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .xi:before{content:"";position:absolute;left:0;top:6px;width:3px;height:3px;
              background:var(--red)}
@@ -137,7 +146,7 @@
   /* ---------- footer ---------- */
   .footer{background:var(--ink);color:var(--paper);display:flex;align-items:center;
           justify-content:space-between;padding:0 12px}
-  .fl,.fr{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;
+  .fl,.fr{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.07em;
           text-transform:uppercase;white-space:nowrap}
   .fr{color:var(--gold)}
 </style></head>
@@ -155,20 +164,20 @@
       <div class="strap">Everything here happened, or was first reported, on Thursday 19 November 2026 · nothing carried over from the 18th</div>
     </div>
     <div class="mr">
-      <div class="tallynum">31</div>
+      <div class="tallynum">29</div>
       <div class="tallylab">STORIES</div>
       <div class="tallysub">13 DRAWN</div>
     </div>
   </div></section>
-  <section class="band " data-block="tally" style="height:19px"><div class="tb">
+  <section class="band " data-block="tally" style="height:20px"><div class="tb">
     <div class="ts" style="flex:5;background:#1f3b5c">
       <span class="tsn">Europe</span><span class="tsc">5</span>
     </div>
     <div class="ts" style="flex:5;background:#7a2a2a">
       <span class="tsn">Americas</span><span class="tsc">5</span>
     </div>
-    <div class="ts" style="flex:7;background:#235040">
-      <span class="tsn">Asia</span><span class="tsc">7</span>
+    <div class="ts" style="flex:5;background:#235040">
+      <span class="tsn">Asia</span><span class="tsc">5</span>
     </div>
     <div class="ts" style="flex:3;background:#6b4a16">
       <span class="tsn">Africa</span><span class="tsc">3</span>
@@ -182,7 +191,7 @@
     <div class="ts" style="flex:5;background:#26262b">
       <span class="tsn">World</span><span class="tsc">5</span>
     </div></div></section>
-  <section class="band " data-block="numbers" style="height:33px"><div class="nb">
+  <section class="band " data-block="numbers" style="height:36px"><div class="nb">
     <div class="nplate"><span>THE DAY</span><span>IN NUMBERS</span></div>
     
       <div class="nc"><div class="nf">70 min</div>
@@ -198,7 +207,7 @@
       <div class="nc"><div class="nf">96–0</div>
         <div class="ncap">Mongolia’s vote</div></div>
   </div></section>
-  <section class="band leads-band" data-block="leads" style="height:252px"><div class="leads"><article class="lede hero">
+  <section class="band leads-band" data-block="leads" style="height:254px"><div class="leads"><article class="lede hero">
     <div class="artbox hero-art"><span class="no"><svg class="art" data-key="summit" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="APEC · SHENZHEN">
   <rect width="160" height="96" fill="#e7ebe9"/>
@@ -216,7 +225,7 @@
   <rect x="128" y="17" width="17" height="11" fill="none" stroke="#14161a" stroke-width="0.7"/>
   <!-- clock above the three, face reads 70 -->
   <circle cx="80" cy="13" r="8.4" fill="#fdfaf2" stroke="#14161a" stroke-width="1.2"/>
-  <text x="80" y="16.6" font-family="Georgia,serif" font-size="8.8" font-weight="700"
+  <text x="80" y="16.6" font-family="Georgia,serif" font-size="9.6" font-weight="700"
         text-anchor="middle" fill="#14161a">70</text>
   <rect x="78.6" y="2" width="2.8" height="3" fill="#14161a"/>
   <!-- three seated figures in suits -->
@@ -253,7 +262,7 @@
   <rect x="117.4" y="53.6" width="1.6" height="3" fill="#8fa8b8"/></svg></span></div>
     <div class="kick2"><b>1</b> · Asia · APEC · SHENZHEN</div>
     <h2 class="hl">Xi, Putin and Trump sign a “peace declaration” and leave the wars out</h2>
-    <p class="deck">The first three-way summit of the three nuclear powers ran 70 minutes. They agreed to cut nuclear risk, refine more oil, reform the UN and curb the ICC. Ukraine and Iran went unmentioned.</p>
+    <p class="deck">First three-way summit of the three nuclear powers. 70 minutes; no mention of Ukraine or Iran.</p>
     <div class="src">AP · Reuters · Guardian</div>
   </article><article class="lede sm">
     <div class="artbox"><span class="no"><svg class="art" data-key="icj" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
@@ -295,8 +304,8 @@
   <circle cx="25" cy="66" r="8" fill="#476c3a"/>
   <circle cx="19" cy="70" r="5.4" fill="#3d6132"/></svg></span></div>
     <div class="kick2"><b>2</b> · World · ICJ · THE HAGUE</div>
-    <h2 class="hl">World Court finds Myanmar committed genocide against the Rohingya</h2>
-    <p class="deck">The first time the court has held a state responsible for genocide. Gambia filed the case seven years ago over the 2017 crackdown.</p>
+    <h2 class="hl">World Court finds Myanmar committed genocide</h2>
+    <p class="deck">The court’s first genocide finding against a state — on Gambia’s case over the 2017 crackdown.</p>
     <div class="src">Reuters · AFP</div>
   </article><article class="lede sm">
     <div class="artbox"><span class="no"><svg class="art" data-key="riyadh" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
@@ -388,10 +397,10 @@
   <circle cx="62" cy="23" r="1.5" fill="#fff4d8"/></svg></span></div>
     <div class="kick2"><b>3</b> · Middle East · YEMEN · RIYADH</div>
     <h2 class="hl">Houthi missile blows out the windows of Riyadh’s tallest tower</h2>
-    <p class="deck">The strike hit the PIF Tower, headquarters of the Saudi sovereign wealth fund, damaging seven or eight floors. No injuries were reported.</p>
+    <p class="deck">Seven or eight floors of the Saudi wealth fund’s PIF Tower damaged; no injuries reported.</p>
     <div class="src">Reuters · Al-Monitor</div>
   </article></div></section>
-  <section class="band pics-band" data-block="bandA" style="height:181px"><div class="pics"><article class="card">
+  <section class="band pics-band" data-block="bandA" style="height:184px"><div class="pics"><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="kerch" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="UKRAINE · KERCH">
   <rect width="160" height="96" fill="#8fa3b3"/>
@@ -547,7 +556,7 @@
     <path d="M112.6 57 h6.8 l1.4 12 h-9.6 Z" fill="#3a3038"/>
     <path d="M113.6 69 l-1.2 10 M118.4 69 l1.2 10" stroke="#241d17" stroke-width="2.6"/></svg></span></div>
     <div class="kick3"><i class="dot">7</i>Americas · HAITI · MARTISSANT</div>
-    <h3 class="ch">Haitian police kill 34 in an offensive to retake Martissant</h3>
+    <h3 class="ch">Haitian police kill 34 retaking Martissant</h3>
   </article><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="greenland" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="DENMARK · GREENLAND">
@@ -588,9 +597,9 @@
     </g>
   </g></svg></span></div>
     <div class="kick3"><i class="dot">8</i>Europe · DENMARK · GREENLAND</div>
-    <h3 class="ch">Denmark’s parliament unanimously ratifies the Greenland pact</h3>
+    <h3 class="ch">Denmark ratifies the Greenland pact</h3>
   </article></div></section>
-  <section class="band pics-band" data-block="bandB" style="height:181px"><div class="pics"><article class="card">
+  <section class="band pics-band" data-block="bandB" style="height:184px"><div class="pics"><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="dhaka" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="BANGLADESH · DHAKA">
   <rect width="160" height="96" fill="#1c1a2b"/>
@@ -728,7 +737,7 @@
           font-weight="700" text-anchor="middle" fill="#c8352f" letter-spacing="0.6">72 H</text>
   </g></svg></span></div>
     <div class="kick3"><i class="dot">11</i>Africa · SOMALIA · UAE</div>
-    <h3 class="ch">Somalia orders the Emirati ambassador out within 72 hours</h3>
+    <h3 class="ch">Somalia expels the UAE ambassador in 72 hours</h3>
   </article><article class="card">
     <div class="artbox"><span class="no"><svg class="art" data-key="cyclone" viewBox="0 0 160 96" preserveAspectRatio="xMidYMid meet"
                role="img" aria-label="COOK ISLANDS">
@@ -829,9 +838,9 @@
     <div class="kick3"><i class="dot">13</i>World · GAMES · GTA VI</div>
     <h3 class="ch">GTA VI sells $2.36 billion in its first day</h3>
   </article></div></section>
-  <section class="band briefs" data-block="briefs" style="height:131px"><div class="bh">
+  <section class="band briefs" data-block="briefs" style="height:122px"><div class="bh">
       <span class="bht">Also on Thursday 19 November 2026</span>
-      <span class="bhn">18 more stories, each with the outlet that filed it</span>
+      <span class="bhn">16 more stories, each with the outlet that filed it</span>
     </div>
     <div class="bl">
       <div class="bc">
@@ -867,67 +876,57 @@
         </div>
         <div class="br" data-brief="20">
           <span class="bn">20</span>
-          <span class="bt" title="Xi tells Washington to do the “right thing” on Taiwan">Xi tells Washington to do the “right thing” on Taiwan</span>
-          <span class="bo">Xinhua</span>
+          <span class="bt" title="Tanker burns after a mine strike east of Hormuz">Tanker burns after a mine strike east of Hormuz</span>
+          <span class="bo">Al Jazeera</span>
         </div>
         <div class="br" data-brief="21">
           <span class="bn">21</span>
-          <span class="bt" title="Manila signs its first Latin America trade deal, with Chile">Manila signs its first Latin America trade deal, with Chile</span>
-          <span class="bo">Inquirer</span>
-        </div>
-        <div class="br" data-brief="22">
-          <span class="bn">22</span>
-          <span class="bt" title="Tanker burns after a mine strike east of Hormuz">Tanker burns after a mine strike east of Hormuz</span>
-          <span class="bo">Al Jazeera</span>
-        </div></div><div class="bc">
-        <div class="br" data-brief="23">
-          <span class="bn">23</span>
           <span class="bt" title="Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia">Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia</span>
           <span class="bo">Nikkei</span>
-        </div>
-        <div class="br" data-brief="24">
-          <span class="bn">24</span>
+        </div></div><div class="bc">
+        <div class="br" data-brief="22">
+          <span class="bn">22</span>
           <span class="bt" title="Kenya picks a US-led group for Mrima Hill rare earths">Kenya picks a US-led group for Mrima Hill rare earths</span>
           <span class="bo">Reuters</span>
         </div>
-        <div class="br" data-brief="25">
-          <span class="bn">25</span>
+        <div class="br" data-brief="23">
+          <span class="bn">23</span>
           <span class="bt" title="Rwanda calls the US approach to the DR Congo deal skewed">Rwanda calls the US approach to the DR Congo deal skewed</span>
           <span class="bo">France 24</span>
         </div>
-        <div class="br" data-brief="26">
-          <span class="bn">26</span>
+        <div class="br" data-brief="24">
+          <span class="bn">24</span>
           <span class="bt" title="Appeals court halts Venezuelan protected status order">Appeals court halts Venezuelan protected status order</span>
           <span class="bo">AP</span>
         </div>
-        <div class="br" data-brief="27">
-          <span class="bn">27</span>
+        <div class="br" data-brief="25">
+          <span class="bn">25</span>
           <span class="bt" title="A US official floated ceding Guyanese land to Venezuela">A US official floated ceding Guyanese land to Venezuela</span>
           <span class="bo">Reuters</span>
         </div>
-        <div class="br" data-brief="28">
-          <span class="bn">28</span>
+        <div class="br" data-brief="26">
+          <span class="bn">26</span>
           <span class="bt" title="White House fires its national cyber director">White House fires its national cyber director</span>
           <span class="bo">France 24</span>
         </div>
-        <div class="br" data-brief="29">
-          <span class="bn">29</span>
+        <div class="br" data-brief="27">
+          <span class="bn">27</span>
           <span class="bt" title="Tonga declares an emergency as the El Niño drought deepens">Tonga declares an emergency as the El Niño drought deepens</span>
           <span class="bo">RNZ</span>
         </div>
-        <div class="br" data-brief="30">
-          <span class="bn">30</span>
+        <div class="br" data-brief="28">
+          <span class="bn">28</span>
           <span class="bt" title="No UN secretary-general when Guterres leaves on 31 Dec">No UN secretary-general when Guterres leaves on 31 Dec</span>
           <span class="bo">Reuters</span>
         </div>
-        <div class="br" data-brief="31">
-          <span class="bn">31</span>
+        <div class="br" data-brief="29">
+          <span class="bn">29</span>
           <span class="bt" title="Voyager 1 is now one light-day out, 25.9 billion km">Voyager 1 is now one light-day out, 25.9 billion km</span>
           <span class="bo">NASA · CNN</span>
         </div></div>
     </div></section>
-  <section class="band bottom-band" data-block="bottom" style="height:133px"><div class="bottom"><div class="mapwrap">
-    <div class="maptitle">Where the day happened<span>each dot is one story · 13 ringed in full weight</span></div>
+  <section class="band bottom-band" data-block="bottom" style="height:130px"><div class="bottom"><div class="mapwrap">
+    <div class="maptitle">Where the day happened<span>each dot is one story; Voyager 1 is past the frame</span></div>
     <svg class="map" viewBox="0 0 216 92" preserveAspectRatio="xMidYMid meet"
          role="img" aria-label="World map, one dot per story">
       <defs><pattern id="dots" width="3.1" height="3.1" patternUnits="userSpaceOnUse">
@@ -1010,14 +1009,6 @@
             fill="#fdfaf2" opacity="0.85"/>
     <circle cx="117.8" cy="20.9" r="1.35"
             fill="#472a5c" opacity="0.72"/>
-    <circle cx="177.8" cy="26.4" r="2.1"
-            fill="#fdfaf2" opacity="0.85"/>
-    <circle cx="177.8" cy="26.4" r="1.35"
-            fill="#235040" opacity="0.72"/>
-    <circle cx="180.6" cy="43.0" r="2.1"
-            fill="#fdfaf2" opacity="0.85"/>
-    <circle cx="180.6" cy="43.0" r="1.35"
-            fill="#235040" opacity="0.72"/>
     <circle cx="141.9" cy="35.2" r="2.1"
             fill="#fdfaf2" opacity="0.85"/>
     <circle cx="141.9" cy="35.2" r="1.35"
@@ -1055,8 +1046,7 @@
     <circle cx="63.6" cy="25.8" r="1.35"
             fill="#26262b" opacity="0.72"/>
     </svg>
-    <div class="mapkey"><span class="k"><i style="background:#1f3b5c"></i>Europe</span><span class="k"><i style="background:#7a2a2a"></i>Americas</span><span class="k"><i style="background:#235040"></i>Asia</span><span class="k"><i style="background:#6b4a16"></i>Africa</span><span class="k"><i style="background:#472a5c"></i>Middle East</span><span class="k"><i style="background:#16545a"></i>Oceania</span><span class="k"><i style="background:#26262b"></i>World</span>
-      <span class="kn">Voyager 1 is past the frame — one light-day out</span></div>
+    <div class="mapkey"><span class="k"><i style="background:#1f3b5c"></i>Europe</span><span class="k"><i style="background:#7a2a2a"></i>Americas</span><span class="k"><i style="background:#235040"></i>Asia</span><span class="k"><i style="background:#6b4a16"></i>Africa</span><span class="k"><i style="background:#472a5c"></i>MID EAST</span><span class="k"><i style="background:#16545a"></i>Oceania</span><span class="k"><i style="background:#26262b"></i>World</span></div>
   </div><div class="xp">
     <div class="xhead">Date check — kept off this page</div>
     <p class="xnote">Every story above carries the 19th. These six broke on
