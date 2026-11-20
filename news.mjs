@@ -12,7 +12,7 @@ export const DAY = {
   strap:
     'Everything here happened, or was first reported, on Thursday 19 November 2026 · nothing carried over from the 18th',
   briefHeader: 'Also on Thursday 19 November 2026',
-  briefNote: '24 more stories, each with the outlet that filed it',
+  briefNote: '18 more stories, each with the outlet that filed it',
   footerLeft: 'Thursday 19 November 2026 · every story names the outlet that reported it',
   footerRight: 'The Day in World News'
 };
@@ -102,31 +102,29 @@ export const STORIES = [
     outlet: 'AP · Sensor Tower'
   },
 
-  // Briefs, stories 14 to 37 — one line each.
+  // Briefs, stories 14 to 31 — one line each, 18 of them.
+  // Cut in v2 for legibility: the Madrid debate line, Mélenchon, the Adwan
+  // detention, the Mo Ibrahim quote, the Alaska suit and Albanese at APEC —
+  // the six with the least consequence. Every remaining line keeps a named
+  // country and an outcome, so the rail still reads as news, not filler.
   { n: 14, region: 'Europe', tag: 'BERLIN', art: null, lon: 13.4, lat: 52.5, headline: 'EU leaders meet in Berlin to rally support for Kyiv', outlet: 'AFP' },
-  { n: 15, region: 'Europe', tag: 'PARIS', art: null, lon: 2.3, lat: 48.9, headline: 'Macron reopens NATO question for Ukraine', outlet: 'France 24' },
+  { n: 15, region: 'Europe', tag: 'PARIS', art: null, lon: 2.3, lat: 48.9, headline: 'Macron reopens the NATO question for Ukraine', outlet: 'France 24' },
   { n: 16, region: 'Europe', tag: 'LONDON', art: null, lon: -0.1, lat: 51.5, headline: 'UK and EU agree a 100,000-a-year youth mobility cap', outlet: 'Guardian' },
-  { n: 17, region: 'Europe', tag: 'MADRID', art: null, lon: -3.7, lat: 40.4, headline: 'Sánchez admits “mistakes” in Spain’s only televised debate', outlet: 'AFP' },
-  { n: 18, region: 'Europe', tag: 'PARIS', art: null, lon: 2.3, lat: 48.9, headline: 'Mélenchon opens the door to an alliance with the Greens', outlet: 'France 24' },
-  { n: 19, region: 'Middle East', tag: 'GAZA', art: null, lon: 34.3, lat: 31.4, headline: 'Israeli tanks end a raid past the Yellow Line in central Gaza', outlet: 'Reuters' },
-  { n: 20, region: 'Middle East', tag: 'LEBANON', art: null, lon: 36, lat: 33.8, headline: 'Israeli jets hit a Hezbollah site in the Bekaa', outlet: 'Times of Israel' },
-  { n: 21, region: 'Middle East', tag: 'ISRAEL', art: null, lon: 34.5, lat: 31.5, headline: 'Court adds six months to Adwan director’s detention', outlet: 'Al Jazeera' },
-  { n: 22, region: 'Middle East', tag: 'IAEA · VIENNA', art: null, lon: 16.4, lat: 48.2, headline: 'West presses Iran at IAEA to reopen bombed sites', outlet: 'Reuters' },
-  { n: 23, region: 'Asia', tag: 'BEIJING', art: null, lon: 116.4, lat: 39.9, headline: 'Xi tells Washington to do the “right thing” on Taiwan', outlet: 'Xinhua' },
-  { n: 24, region: 'Asia', tag: 'MANILA', art: null, lon: 121, lat: 14.6, headline: 'Manila signs its first Latin America trade deal, with Chile', outlet: 'Inquirer' },
-  { n: 25, region: 'Asia', tag: 'HORMUZ', art: null, lon: 56.5, lat: 26.5, headline: 'Tanker burns after a mine strike east of Hormuz', outlet: 'Al Jazeera' },
-  { n: 26, region: 'Asia', tag: 'TOKYO', art: null, lon: 139.7, lat: 35.7, headline: 'Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia', outlet: 'Nikkei' },
-  { n: 27, region: 'Africa', tag: 'KENYA', art: null, lon: 37.9, lat: -1.3, headline: 'Kenya picks a US-led group for Mrima Hill rare earths', outlet: 'Reuters' },
-  { n: 28, region: 'Africa', tag: 'AFRICA', art: null, lon: 31.2, lat: 30, headline: 'Mo Ibrahim: with aid cut, Africa must own its future', outlet: 'Reuters' },
-  { n: 29, region: 'Africa', tag: 'DR CONGO', art: null, lon: 30.1, lat: -1.9, headline: 'Rwanda calls US approach to the DR Congo deal skewed', outlet: 'France 24' },
-  { n: 30, region: 'Americas', tag: 'US COURTS', art: null, lon: -118.2, lat: 34.1, headline: 'Appeals court halts Venezuelan protected status order', outlet: 'AP' },
-  { n: 31, region: 'Americas', tag: 'ALASKA', art: null, lon: -149.9, lat: 61.2, headline: 'Trump moves to drop his suit against Alaska’s Senate result', outlet: 'AP' },
-  { n: 32, region: 'Americas', tag: 'GUYANA', art: null, lon: -58.2, lat: 6.8, headline: 'A US official floated ceding Guyanese territory to Venezuela', outlet: 'Reuters' },
-  { n: 33, region: 'Americas', tag: 'WASHINGTON', art: null, lon: -77, lat: 38.9, headline: 'White House fires its national cyber director', outlet: 'France 24' },
-  { n: 34, region: 'Oceania', tag: 'APEC', art: null, lon: 114.1, lat: 22.5, headline: 'Albanese tells Putin to “end your war, end it now” at APEC', outlet: 'Guardian' },
-  { n: 35, region: 'Oceania', tag: 'TONGA', art: null, lon: -175.2, lat: -21.1, headline: 'Tonga declares emergency as the El Niño drought deepens', outlet: 'RNZ' },
-  { n: 36, region: 'World', tag: 'UNITED NATIONS', art: null, lon: -74, lat: 40.7, headline: 'No UN secretary-general when Guterres leaves on 31 Dec', outlet: 'Reuters' },
-  { n: 37, region: 'World', tag: 'VOYAGER 1', art: null, lon: null, lat: null, headline: 'Voyager 1 is now one light-day out, 25.9 billion km', outlet: 'NASA · CNN' }
+  { n: 17, region: 'Middle East', tag: 'GAZA', art: null, lon: 34.3, lat: 31.4, headline: 'Israeli tanks end a raid past the Yellow Line in Gaza', outlet: 'Reuters' },
+  { n: 18, region: 'Middle East', tag: 'LEBANON', art: null, lon: 36, lat: 33.8, headline: 'Israeli jets hit a Hezbollah site in the Bekaa', outlet: 'Times of Israel' },
+  { n: 19, region: 'Middle East', tag: 'IAEA · VIENNA', art: null, lon: 16.4, lat: 48.2, headline: 'West presses Iran at IAEA to reopen bombed sites', outlet: 'Reuters' },
+  { n: 20, region: 'Asia', tag: 'BEIJING', art: null, lon: 116.4, lat: 39.9, headline: 'Xi tells Washington to do the “right thing” on Taiwan', outlet: 'Xinhua' },
+  { n: 21, region: 'Asia', tag: 'MANILA', art: null, lon: 121, lat: 14.6, headline: 'Manila signs its first Latin America trade deal, with Chile', outlet: 'Inquirer' },
+  { n: 22, region: 'Asia', tag: 'HORMUZ', art: null, lon: 56.5, lat: 26.5, headline: 'Tanker burns after a mine strike east of Hormuz', outlet: 'Al Jazeera' },
+  { n: 23, region: 'Asia', tag: 'TOKYO', art: null, lon: 139.7, lat: 35.7, headline: 'Nikkei −4.5%, SoftBank −15% as the AI selloff reaches Asia', outlet: 'Nikkei' },
+  { n: 24, region: 'Africa', tag: 'KENYA', art: null, lon: 37.9, lat: -1.3, headline: 'Kenya picks a US-led group for Mrima Hill rare earths', outlet: 'Reuters' },
+  { n: 25, region: 'Africa', tag: 'DR CONGO', art: null, lon: 30.1, lat: -1.9, headline: 'Rwanda calls the US approach to the DR Congo deal skewed', outlet: 'France 24' },
+  { n: 26, region: 'Americas', tag: 'US COURTS', art: null, lon: -118.2, lat: 34.1, headline: 'Appeals court halts Venezuelan protected status order', outlet: 'AP' },
+  { n: 27, region: 'Americas', tag: 'GUYANA', art: null, lon: -58.2, lat: 6.8, headline: 'A US official floated ceding Guyanese land to Venezuela', outlet: 'Reuters' },
+  { n: 28, region: 'Americas', tag: 'WASHINGTON', art: null, lon: -77, lat: 38.9, headline: 'White House fires its national cyber director', outlet: 'France 24' },
+  { n: 29, region: 'Oceania', tag: 'TONGA', art: null, lon: -175.2, lat: -21.1, headline: 'Tonga declares an emergency as the El Niño drought deepens', outlet: 'RNZ' },
+  { n: 30, region: 'World', tag: 'UNITED NATIONS', art: null, lon: -74, lat: 40.7, headline: 'No UN secretary-general when Guterres leaves on 31 Dec', outlet: 'Reuters' },
+  { n: 31, region: 'World', tag: 'VOYAGER 1', art: null, lon: null, lat: null, headline: 'Voyager 1 is now one light-day out, 25.9 billion km', outlet: 'NASA · CNN' }
 ];
 
 export const NUMBERS = [

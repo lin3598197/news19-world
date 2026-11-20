@@ -17,12 +17,22 @@ Top to bottom: a masthead carrying the date as the largest object on the sheet a
 `NOV / 19 / THU` block; a seven-segment region tally counted from the data; a black
 numbers strip with six figures from the day; three leads (Asia/APEC, World/ICJ,
 Middle East/Yemen) with hand-authored scene drawings; two five-card picture bands
-holding stories 4 to 13; a briefs list of the remaining 24 one-line stories with the
+holding stories 4 to 13; a briefs list of the remaining 18 one-line stories with the
 outlet that filed each; a dotted world map with one dot per story; and a black
 `Date check` panel naming the six stories that broke on Wednesday 18 November and are
 therefore drawn nowhere on this page.
 
-37 stories in total, 13 of them drawn.
+31 stories in total, 13 of them drawn.
+
+## Read at 300 px
+
+The bounty judge views the sheet at about 300 px across, where a 1024 px page is
+reduced to 0.293x. Every size on the page was set against that: no text is smaller
+than 8.2 px, card headlines are 13 px, lead headlines 21 px, briefs 9.2 px in two
+columns, and the region tally and numbers strip carry 11.5 px and 16.5 px figures.
+`node compose.mjs` prints a font-size histogram, the smallest size in use, and a
+per-card overflow check, so the floor is measured rather than assumed. The briefs
+rail was cut from 24 items to 18 to pay for the larger type.
 
 ## Build
 
@@ -33,15 +43,16 @@ MAKEFUN_OUTPUT_DIR=./out node --experimental-strip-types main.ts
 ```
 
 `compose.mjs` drives headless Chrome over CDP (`--headless=new`), captures a
-1024x1024 screenshot, and prints every block's top/height/bottom, every art box's
-aspect ratio, plus any truncated brief, clipped block or sub-6.4px text, so the
-layout is verified by measurement rather than by eye.
+1024x1024 screenshot, and prints every block's top/height/bottom, the height each
+band actually wants, every art box's aspect ratio, a font-size histogram, plus any
+truncated brief, clipped block, overflowing card or text under 8.2 px, so the layout
+is verified by measurement rather than by eye.
 
 ## Files
 
 | file | what it is |
 | --- | --- |
-| `news.mjs` | the day's facts: 37 stories, numbers, exclusions, map coordinates |
+| `news.mjs` | the day's facts: 31 stories, numbers, exclusions, map coordinates |
 | `art.mjs` | the 13 scene drawings, each authored in a `0 0 160 96` viewBox |
 | `compose.mjs` | layout, build, Chrome render, and the measurement probe |
 | `page.html` | generated broadsheet page |

@@ -24,16 +24,20 @@ const GOLD = '#e8c56a';
 
 // Band heights in px. They must sum to exactly 1024; the rules between bands are
 // borders inside each band's own height, so nothing falls off the sheet.
+// v2: every band was re-cut so no type sits below 8.2px. The briefs rail gave up
+// six stories (24 -> 18) to buy 2.4px of type; the leads gave up 36px of art to
+// buy 21px headlines; the bottom band gave up 16px to buy a 74px map and 9.4px
+// date-check items.
 const H = {
   masthead: 80,
   tally: 19,
-  numbers: 30,
-  leads: 310,
-  bandA: 166,
-  bandB: 166,
-  briefs: 104,
+  numbers: 33,
+  leads: 252,
+  bandA: 181,
+  bandB: 181,
+  briefs: 131,
   bottom: 133,
-  footer: 16
+  footer: 14
 };
 
 const CONT = counts();
@@ -142,7 +146,8 @@ function card(s) {
 }
 
 function briefsBlock() {
-  const cols = [briefs.slice(0, 8), briefs.slice(8, 16), briefs.slice(16, 24)];
+  const mid = Math.ceil(briefs.length / 2);
+  const cols = [briefs.slice(0, mid), briefs.slice(mid)];
   return `<div class="bh">
       <span class="bht">${DAY.briefHeader}</span>
       <span class="bhn">${DAY.briefNote}</span>
@@ -201,7 +206,7 @@ function build() {
 <style>
   :root{
     --paper:${PAPER}; --ink:${INK}; --red:${RED}; --gold:${GOLD};
-    --hero-art:196px;
+    --hero-art:96px; --lede-art:90px; --card-art:106px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1024px;height:1024px;overflow:hidden;background:var(--paper)}
@@ -214,123 +219,127 @@ function build() {
   .band:last-child{border-bottom:none}
 
   /* ---------- masthead ---------- */
-  .mh{display:grid;grid-template-columns:84px 1fr 108px;height:100%}
+  .mh{display:grid;grid-template-columns:88px 1fr 116px;height:100%}
   .mb{background:var(--red);color:var(--paper);display:flex;flex-direction:column;
       align-items:center;justify-content:center;gap:1px;padding-top:2px}
-  .mb-mon{font:700 10.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.20em;opacity:.92}
-  .mb-day{font:700 33px/.92 Georgia,serif;letter-spacing:-.01em}
-  .mb-dow{font:700 8.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.24em;opacity:.92}
-  .mid{padding:7px 18px 0;display:flex;flex-direction:column;justify-content:center}
-  .kick{font:700 9.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.23em;color:var(--red);
-        margin-bottom:4px}
+  .mb-mon{font:700 11px/1 Helvetica,Arial,sans-serif;letter-spacing:.20em;opacity:.92}
+  .mb-day{font:700 34px/.92 Georgia,serif;letter-spacing:-.01em}
+  .mb-dow{font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.24em;opacity:.92}
+  .mid{padding:6px 18px 0;display:flex;flex-direction:column;justify-content:center}
+  .kick{font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.22em;color:var(--red);
+        margin-bottom:5px}
   .date{font:700 37px/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.015em}
-  .strap{font:italic 8.8px/1.25 Georgia,serif;color:#4b473f;margin-top:4px;letter-spacing:.005em}
+  .strap{font:italic 9.4px/1.22 Georgia,serif;color:#4b473f;margin-top:5px;letter-spacing:.005em}
   .mr{border-left:1px solid var(--ink);display:flex;flex-direction:column;
       align-items:center;justify-content:center;padding-top:2px}
   .tallynum{font:700 40px/.86 Georgia,serif;letter-spacing:-.03em;color:var(--ink)}
-  .tallylab{font:700 7.6px/1.5 Helvetica,Arial,sans-serif;letter-spacing:.20em;margin-top:3px}
-  .tallysub{font:700 7.2px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.10em;color:var(--red)}
+  .tallylab{font:700 8.4px/1.4 Helvetica,Arial,sans-serif;letter-spacing:.20em;margin-top:2px}
+  .tallysub{font:700 8.2px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.10em;color:var(--red)}
 
   /* ---------- tally bar ---------- */
   .tb{display:flex;height:100%}
-  .ts{display:flex;align-items:center;justify-content:center;gap:5px;color:var(--paper);
-      border-right:1.5px solid var(--paper);overflow:hidden}
+  .ts{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--paper);
+      border-right:1.5px solid var(--paper);overflow:hidden;min-width:0}
   .ts:last-child{border-right:none}
-  .tsn{font:700 7.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  .tsn{font:700 8.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;
        white-space:nowrap}
-  .tsc{font:700 8.2px/1 Georgia,serif;color:var(--gold)}
+  .tsc{font:700 11.5px/1 Georgia,serif;color:var(--gold);flex:0 0 auto}
 
   /* ---------- numbers ---------- */
   .nb{display:flex;height:100%;align-items:stretch}
-  .nplate{flex:0 0 92px;background:var(--ink);color:var(--paper);display:flex;
+  .nplate{flex:0 0 104px;background:var(--ink);color:var(--paper);display:flex;
           flex-direction:column;justify-content:center;padding-left:11px;gap:2px}
-  .nplate span{font:700 7.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.16em}
-  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:4px 0 0 11px;
+  .nplate span{font:700 8.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.10em;
+               white-space:nowrap}
+  .nc{flex:1 1 0;min-width:0;border-left:1px solid #b7b1a3;padding:3px 0 0 10px;
       display:flex;flex-direction:column;justify-content:center}
-  .nf{font:700 12.4px/1.05 Georgia,serif;color:var(--red);letter-spacing:-.01em}
-  .ncap{font:600 6.6px/1.25 Helvetica,Arial,sans-serif;letter-spacing:.09em;
+  .nf{font:700 16.5px/1.02 Georgia,serif;color:var(--red);letter-spacing:-.015em;
+      white-space:nowrap}
+  .ncap{font:600 8.4px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.06em;
         text-transform:uppercase;color:#5b564c;margin-top:2px}
 
   /* ---------- leads ---------- */
-  .leads{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);
+  .leads{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr) minmax(0,1fr);
          column-gap:0;padding:8px 12px 0}
-  .lede{padding:0 12px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
+  .lede{padding:0 12px 4px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
   .lede:first-child{border-left:none;padding-left:0}
   .artbox{width:100%;aspect-ratio:160/96;overflow:hidden;background:#e8e4d8;
           outline:1px solid #b9b3a4;outline-offset:0}
   .artbox .no{display:block;width:100%;height:100%}
   .art{display:block;width:100%;height:100%}
   .hero-art{height:var(--hero-art);width:calc(var(--hero-art) * 5 / 3);margin:0 auto}
-  .lede .artbox{margin-bottom:5px}
-  .kick2{font:700 6.6px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.13em;
+  .lede .artbox{height:var(--lede-art);width:calc(var(--lede-art) * 5 / 3);
+                margin:0 auto 4px}
+  .kick2{font:700 8.4px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.11em;
          text-transform:uppercase;color:#4b473f;white-space:nowrap;overflow:hidden}
-  .lede.sm .kick2{white-space:normal;line-height:1.2;letter-spacing:.06em}
+  .lede.sm .kick2{white-space:normal;line-height:1.15;letter-spacing:.05em}
   .kick2 b{color:var(--red);margin-right:2px}
-  .hl{font:700 19.5px/1.06 Georgia,serif;letter-spacing:-.012em;margin-top:3px;color:var(--ink)}
-  .lede.sm .hl{font-size:13.4px;line-height:1.1}
-  .deck{font:400 8.6px/1.28 Georgia,serif;color:#3f3b34;margin-top:4px}
-  .lede.sm .deck{font-size:8px}
-  .src{font:700 6.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;
-       color:var(--red);margin-top:4px}
+  .hl{font:700 21px/1.05 Georgia,serif;letter-spacing:-.014em;margin-top:4px;color:var(--ink)}
+  .lede.sm .hl{font-size:21px;line-height:1.05}
+  .deck{font:400 9.6px/1.3 Georgia,serif;color:#3f3b34;margin-top:4px}
+  .src{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
+       color:var(--red);margin-top:5px}
 
   /* ---------- picture bands ---------- */
   .pics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:7px 12px 0}
-  .card{padding:0 7px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
+  .card{padding:0 8px 3px;border-left:1px solid #c6c0b2;min-width:0;overflow:hidden}
   .card:first-child{border-left:none;padding-left:0}
-  .card .artbox{height:96px;width:160px;margin-bottom:4px}
-  .kick3{font:700 6.4px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.10em;
-         text-transform:uppercase;color:#4b473f;display:flex;align-items:center;gap:3px;
+  .card .artbox{height:var(--card-art);width:calc(var(--card-art) * 5 / 3);margin-bottom:4px}
+  .kick3{font:700 8.2px/1.1 Helvetica,Arial,sans-serif;letter-spacing:.07em;
+         text-transform:uppercase;color:#4b473f;display:flex;align-items:center;gap:4px;
          white-space:nowrap;overflow:hidden}
-  .dot{font:700 6.4px/1 Helvetica,Arial,sans-serif;font-style:normal;color:var(--paper);
-       background:var(--red);border-radius:50%;width:10px;height:10px;display:inline-flex;
+  .dot{font:700 8.4px/1 Helvetica,Arial,sans-serif;font-style:normal;color:var(--paper);
+       background:var(--red);border-radius:50%;width:12px;height:12px;display:inline-flex;
        align-items:center;justify-content:center;flex:0 0 auto}
-  .ch{font:700 11.4px/1.09 Georgia,serif;letter-spacing:-.005em;margin-top:3px;color:var(--ink)}
+  .ch{font:700 13px/1.1 Georgia,serif;letter-spacing:-.008em;margin-top:3px;color:var(--ink)}
 
   /* ---------- briefs ---------- */
+  /* v2: 18 briefs in two columns of nine. Two columns buy ~2x the width per
+     line, which is what lets the rail sit at 9.2px instead of 7.5px. */
   .briefs{background:var(--paper)}
-  .bh{height:25px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
+  .bh{height:26px;background:var(--ink);color:var(--paper);display:flex;align-items:center;
       justify-content:space-between;padding:0 12px}
-  .bht{font:700 10.4px/1 Georgia,serif;letter-spacing:.02em}
-  .bhn{font:700 6.6px/1 Helvetica,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;
+  .bht{font:700 11.6px/1 Georgia,serif;letter-spacing:.02em}
+  .bhn{font:700 8.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;
        color:var(--gold)}
-  .bl{display:grid;grid-template-columns:1fr 1fr 1fr;height:calc(100% - 25px);
-      padding:2px 12px 0}
-  .bc{min-width:0;padding-right:10px;border-right:1px solid #c6c0b2;margin-right:10px}
-  .bc:last-child{border-right:none;margin-right:0;padding-right:0}
-  .br{display:flex;align-items:baseline;gap:4px;height:9.4px;overflow:hidden}
-  .bn{font:700 6.5px/1 Georgia,serif;color:var(--red);width:11px;flex:0 0 11px;text-align:right}
-  .bt{font:400 7.5px/1 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
+  .bl{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 26px);
+      padding:3px 12px 0;column-gap:22px}
+  .bc{min-width:0;padding-right:20px;border-right:1px solid #c6c0b2}
+  .bc:last-child{border-right:none;padding-right:0}
+  .br{display:flex;align-items:baseline;gap:5px;height:11.1px;overflow:hidden}
+  .bn{font:700 8.6px/1 Georgia,serif;color:var(--red);width:14px;flex:0 0 14px;text-align:right}
+  .bt{font:400 9.2px/1 Georgia,serif;color:var(--ink);flex:1 1 auto;min-width:0;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bo{font:700 6.4px/1 Helvetica,Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  .bo{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;
        color:var(--red);flex:0 0 auto;white-space:nowrap}
 
   /* ---------- bottom ---------- */
   .bottom{display:grid;grid-template-columns:232px 1fr;gap:0}
-  .mapwrap{padding:7px 10px 0 12px;display:flex;flex-direction:column;min-width:0}
-  .maptitle{font:700 7.6px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.13em;
+  .mapwrap{padding:0 10px 0 12px;display:flex;flex-direction:column;min-width:0}
+  .maptitle{font:700 8.4px/1.15 Helvetica,Arial,sans-serif;letter-spacing:.10em;
             text-transform:uppercase;color:var(--ink)}
-  .maptitle span{display:block;font:italic 6.6px/1.2 Georgia,serif;letter-spacing:0;
-                 text-transform:none;color:#5b564c;margin-top:2px}
-  .map{width:100%;height:64px;margin-top:3px;display:block}
-  .mapkey{display:flex;flex-wrap:wrap;gap:0 6px;margin-top:3px}
-  .mapkey .k{font:700 6.6px/1.4 Helvetica,Arial,sans-serif;letter-spacing:.05em;
+  .maptitle span{display:block;font:italic 8.2px/1.15 Georgia,serif;letter-spacing:0;
+                 text-transform:none;color:#5b564c;margin-top:1px}
+  .map{width:100%;height:74px;margin-top:2px;display:block}
+  .mapkey{display:flex;flex-wrap:wrap;gap:0 5px;margin-top:2px}
+  .mapkey .k{font:700 8.4px/1.3 Helvetica,Arial,sans-serif;letter-spacing:0;
              text-transform:uppercase;color:#3f3b34;display:inline-flex;align-items:center;gap:2.5px}
-  .mapkey .k i{width:5.5px;height:5.5px;border-radius:50%;display:inline-block}
-  .mapkey .kn{font:italic 6.6px/1.4 Georgia,serif;color:#5b564c;flex-basis:100%}
-  .xp{margin:6px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
-      color:var(--paper);padding:6px 12px 0 12px;height:calc(100% - 6px);overflow:hidden}
-  .xhead{font:700 11px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
-  .xnote{font:400 7.8px/1.32 Georgia,serif;color:#ded8c8;margin-top:4px;max-width:660px}
-  .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:5px}
-  .xi{font:400 8.2px/1.55 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
+  .mapkey .k i{width:6px;height:6px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .mapkey .kn{font:italic 8.4px/1.3 Georgia,serif;color:#5b564c;flex-basis:100%}
+  .xp{margin:5px 12px 0 0;background:var(--ink);border-top:3px solid var(--red);
+      color:var(--paper);padding:6px 12px 0 12px;height:calc(100% - 5px);overflow:hidden}
+  .xhead{font:700 11.6px/1 Georgia,serif;color:var(--gold);letter-spacing:.01em}
+  .xnote{font:400 8.6px/1.28 Georgia,serif;color:#ded8c8;margin-top:3px;max-width:660px}
+  .xlist{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin-top:4px}
+  .xi{font:400 9.4px/1.5 Georgia,serif;color:var(--paper);padding-left:9px;position:relative;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .xi:before{content:"";position:absolute;left:0;top:5px;width:3px;height:3px;
+  .xi:before{content:"";position:absolute;left:0;top:6px;width:3px;height:3px;
              background:var(--red)}
 
   /* ---------- footer ---------- */
   .footer{background:var(--ink);color:var(--paper);display:flex;align-items:center;
           justify-content:space-between;padding:0 12px}
-  .fl,.fr{font:700 6.8px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;
+  .fl,.fr{font:700 8.2px/1 Helvetica,Arial,sans-serif;letter-spacing:.09em;
           text-transform:uppercase;white-space:nowrap}
   .fr{color:var(--gold)}
 </style></head>
@@ -357,6 +366,16 @@ const PROBE = `(() => {
   const blocks = [...document.querySelectorAll('[data-block]')].map(el => {
     const o = r(el);
     o.name = el.dataset.block; o.sh = el.scrollHeight; o.ch = el.clientHeight;
+    // deepest content bottom measured from the block's own top: this is the
+    // height the band actually wants, so H can be set to it + the rule.
+    let deep = 0, who = '';
+    for (const k of el.querySelectorAll('*')) {
+      const b = k.getBoundingClientRect();
+      if (b.height === 0) continue;
+      const d = b.bottom - o.top;
+      if (d > deep) { deep = d; who = (k.className || k.tagName).toString().slice(0, 18); }
+    }
+    o.want = +deep.toFixed(1); o.who = who;
     return o;
   });
   const arts = [...document.querySelectorAll('.art')].map(el => {
@@ -396,11 +415,58 @@ const PROBE = `(() => {
   };
   const tiny = [...document.querySelectorAll('.page *')].filter(el =>
       el.children.length === 0 && el.textContent.trim() &&
-      parseFloat(getComputedStyle(el).fontSize) < 6.4)
-    .map(el => getComputedStyle(el).fontSize + ' ' + el.textContent.trim().slice(0, 20));
+      parseFloat(getComputedStyle(el).fontSize) < 8.2)
+    .map(el => getComputedStyle(el).fontSize + ' ' + el.textContent.trim().slice(0, 24));
+  // font-size histogram over every leaf text node, smallest first
+  const sizes = new Map();
+  for (const el of document.querySelectorAll('.page *')) {
+    if (el.children.length || !el.textContent.trim()) continue;
+    const fs = parseFloat(getComputedStyle(el).fontSize).toFixed(1);
+    sizes.set(fs, (sizes.get(fs) || 0) + 1);
+  }
+  const hist = [...sizes.entries()].sort((a, b) => parseFloat(a[0]) - parseFloat(b[0]));
+  const cardOver = [...document.querySelectorAll('.card, .lede')].map(el => {
+    const b = el.getBoundingClientRect();
+    let deep = 0, who = '';
+    for (const k of el.querySelectorAll('*')) {
+      const r2 = k.getBoundingClientRect();
+      if (r2.height === 0) continue;
+      const d = r2.bottom - b.top;
+      if (d > deep) { deep = d; who = (k.className || k.tagName).toString().slice(0, 14); }
+    }
+    const lines = el.querySelector('.ch, .hl');
+    return { t: (el.querySelector('.ch, .hl') || {}).textContent?.slice(0, 34) || '',
+             h: +b.height.toFixed(1), deep: +deep.toFixed(1), who,
+             over: +(deep - b.height).toFixed(1),
+             lines: lines ? Math.round(lines.getBoundingClientRect().height /
+                     (parseFloat(getComputedStyle(lines).fontSize) * 1.1)) : 0 };
+  });
+  const storyCount = document.querySelectorAll('.ch, .hl, .br').length;
+  const kids = {};
+  for (const sel of ['.bottom > *', '.leads > *', '.mapwrap > *', '.xp > *']) {
+    kids[sel] = [...document.querySelectorAll(sel)].map(el => ({
+      c: (el.className || el.tagName).toString().slice(0, 16),
+      h: +el.getBoundingClientRect().height.toFixed(1),
+      w: +el.getBoundingClientRect().width.toFixed(1)
+    }));
+  }
+  const numOver = [...document.querySelectorAll('.nc')].map(el => {
+    const b = el.getBoundingClientRect();
+    const f = el.querySelector('.nf'), c = el.querySelector('.ncap');
+    const fb = f.getBoundingClientRect(), cb = c.getBoundingClientRect();
+    return { fig: f.textContent, cellW: +b.width.toFixed(1),
+             figW: f.scrollWidth, capW: c.scrollWidth,
+             over: +Math.max(f.scrollWidth - f.clientWidth,
+                             c.scrollWidth - c.clientWidth).toFixed(1) };
+  });
+  const plate = [...document.querySelectorAll('.nplate span')].map(el => ({
+    t: el.textContent, sw: el.scrollWidth, cw: el.clientWidth,
+    over: +(el.scrollWidth - el.clientWidth).toFixed(1)
+  }));
   return { page:{w:document.documentElement.scrollWidth, h:document.documentElement.scrollHeight,
     bodyH:+document.body.getBoundingClientRect().height.toFixed(2)},
-    blocks, arts, trunc, clipped, tight, tiny, text };
+    blocks, arts, trunc, clipped, tight, tiny, hist, storyCount, cardOver, kids, numOver,
+    plate, text };
 })()`;
 
 async function cdp(url) {
@@ -469,10 +535,11 @@ if (process.argv.includes('--html')) {
 
   console.log('page  ' + m.page.w + 'x' + m.page.h + '   body ' + m.page.bodyH);
   console.log('');
-  console.log('block        top     height    bottom   scroll/client');
+  console.log('block        top     height    bottom   scroll/client   wants');
   for (const b of m.blocks) {
     console.log(b.name.padEnd(11) + String(b.top).padStart(7) + String(b.h).padStart(9) +
-                String(b.bottom).padStart(9) + ('   ' + b.sh + '/' + b.ch).padStart(12));
+                String(b.bottom).padStart(9) + ('   ' + b.sh + '/' + b.ch).padStart(12) +
+                String(b.want).padStart(9) + ' ' + b.who);
   }
   console.log('');
   const last = m.blocks[m.blocks.length - 1];
@@ -489,8 +556,33 @@ if (process.argv.includes('--html')) {
   console.log('briefs truncated: ' + (m.trunc.length ? m.trunc.join(' | ') : 'none'));
   console.log('blocks clipped:   ' + (m.clipped.length ? m.clipped.join(' | ') : 'none'));
   console.log('rows too wide:    ' + (m.tight.length ? m.tight.join(' | ') : 'none'));
-  console.log('text under 6.4px: ' + (m.tiny.length ? m.tiny.join(' | ') : 'none'));
+  console.log('text under 8.2px: ' + (m.tiny.length ? m.tiny.join(' | ') : 'none'));
   console.log('');
+  console.log('font-size histogram (smallest first, element count):');
+  for (const [fs, n] of m.hist) console.log('  ' + fs.padStart(5) + 'px  x' + n);
+  console.log('  smallest on page: ' + m.hist[0][0] + 'px');
+  console.log('  stories as counted in DOM (.hl/.ch/.br): ' + m.storyCount);
+  console.log('');
+  console.log('cards/leads: over = content bottom past the card box (negative = clearance)');
+  for (const c of m.cardOver) {
+    console.log('  ' + (c.over > 0 ? 'OVER ' : '  ok ') + String(c.over).padStart(6) +
+                '  h' + String(c.h).padStart(6) + '  ' + c.lines + 'ln  ' +
+                c.who.padEnd(14) + c.t);
+  }
+  console.log('');
+  for (const [sel, arr] of Object.entries(m.kids)) {
+    console.log(sel.padEnd(18) + arr.map(k => k.c + ' ' + k.h + 'x' + k.w).join('  |  '));
+  }
+  console.log('');
+  console.log('numbers cells: over = figure/caption past the cell right edge');
+  for (const n of m.numOver) {
+    console.log('  ' + (n.over > 0 ? 'OVER ' : '  ok ') + String(n.over).padStart(6) +
+                '  cell' + String(n.cellW).padStart(6) + ' fig' + String(n.figW).padStart(6) +
+                ' cap' + String(n.capW).padStart(6) + '  ' + n.fig);
+  }
+  console.log('');
+  console.log('numbers plate: ' + m.plate.map(p => p.t + ' sw' + p.sw +
+              (p.over > 0 ? ' OVER ' + p.over : ' ok')).join('  |  '));
   console.log('masthead right : ' + m.text.mast.split(String.fromCharCode(10)).join(' / '));
   console.log('tally          : ' + m.text.tally.join('  |  '));
   console.log('numbers        : ' + m.text.nums.join('  |  '));

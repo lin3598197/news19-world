@@ -38,7 +38,7 @@ function summit() {
   <rect x="128" y="17" width="17" height="11" fill="none" stroke="${INK}" stroke-width="0.7"/>
   <!-- clock above the three, face reads 70 -->
   <circle cx="80" cy="13" r="8.4" fill="${CREAM}" stroke="${INK}" stroke-width="1.2"/>
-  <text x="80" y="16.6" font-family="Georgia,serif" font-size="8" font-weight="700"
+  <text x="80" y="16.6" font-family="Georgia,serif" font-size="8.8" font-weight="700"
         text-anchor="middle" fill="${INK}">70</text>
   <rect x="78.6" y="2" width="2.8" height="3" fill="${INK}"/>
   <!-- three seated figures in suits -->
@@ -191,8 +191,8 @@ function ipo() {
   <rect x="6" y="6" width="148" height="84" rx="3" fill="#f7f4ea" stroke="${INK}" stroke-width="1"/>
   <rect x="6" y="6" width="148" height="17" rx="3" fill="${INK}"/>
   <rect x="6" y="19" width="148" height="4" fill="${INK}"/>
-  <text x="14" y="18" font-family="Helvetica,Arial,sans-serif" font-size="7.4"
-        font-weight="700" letter-spacing="0.7" fill="${CREAM}">ANTHROPIC</text>
+  <text x="14" y="18" font-family="Helvetica,Arial,sans-serif" font-size="8.4"
+        font-weight="700" letter-spacing="0.4" fill="${CREAM}">ANTHROPIC</text>
   <text x="146" y="18.4" font-family="Helvetica,Arial,sans-serif" font-size="9.4"
         font-weight="700" text-anchor="end" fill="${GOLD}">+17%</text>
   <!-- chart body -->
